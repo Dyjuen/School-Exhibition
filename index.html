@@ -12,9 +12,10 @@
             text-align: center;
         }
         header {
-            background: #007bff;
+            background: url('banner.jpg') center/cover no-repeat;
             color: white;
-            padding: 20px;
+            padding: 100px 20px;
+            font-size: 2em;
         }
         .container {
             width: 80%;
@@ -24,35 +25,53 @@
         .project {
             border: 1px solid #ddd;
             padding: 15px;
-            margin: 10px;
+            margin: 10px 0;
             background: #f9f9f9;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 300px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
         }
         footer {
             background: #007bff;
             color: white;
             padding: 10px;
-            position: absolute;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
     </style>
 </head>
-
 <body>
     <header>
         <h1>Welcome to the School Exhibition</h1>
     </header>
     <div class="container">
+        <h2>About the Exhibition</h2>
+        <p>Discover amazing projects created by our students.</p>
         <h2>Projects</h2>
         <div class="project">
             <h3>Project 1</h3>
-            <img src="assets/image.png" alt="Description" width="300">
             <p>Description of project 1.</p>
         </div>
         <div class="project">
             <h3>Project 2</h3>
-            <img src="assets/weird.png" alt="Description" width="300">
             <p>Description of project 2.</p>
+        </div>
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="image1.jpg" alt="Exhibit 1">
+            <img src="image2.jpg" alt="Exhibit 2">
+            <img src="image3.jpg" alt="Exhibit 3">
         </div>
     </div>
     <footer>
