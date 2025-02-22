@@ -24,46 +24,59 @@
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
+    background-color: #f4f4f4;
 }
+
 header {
     background: url('banner.jpg') center/cover no-repeat;
     color: white;
     padding: 100px 20px;
     font-size: 2em;
 }
+
 .container {
     width: 80%;
     margin: auto;
     padding: 20px;
 }
+
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-items: center;
+    display: flex;
+    overflow-x: auto;
     padding: 20px;
+    gap: 20px;
+    justify-content: center;
 }
+
 .gallery-item {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    overflow: hidden;
+    flex: 0 0 auto;
 }
-.gallery-item img {
+
+.card {
+    position: relative;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background: white;
+}
+
+.card img {
     width: 100%;
     display: block;
-    transition: transform 0.3s;
 }
-.gallery-item:hover img {
+
+.card:hover {
     transform: scale(1.1);
 }
-.gallery-item .description {
+
+.description {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -75,9 +88,11 @@ header {
     opacity: 0;
     transition: opacity 0.3s;
 }
-.gallery-item:hover .description {
+
+.card:hover .description {
     opacity: 1;
 }
+
 footer {
     background: #007bff;
     color: white;
