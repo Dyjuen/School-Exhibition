@@ -10,7 +10,7 @@
 }
 
 .topbar a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
@@ -64,6 +64,7 @@ header {
 
 .gallery-item img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
     transition: transform 0.3s;
 }
