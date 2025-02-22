@@ -1,0 +1,30 @@
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 123, 255, 0.9); /* Semi-transparent blue */
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+.topbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.topbar a:hover {
+    text-decoration: underline;
+}
+
+body {
+    padding-top: 60px; /* Prevents content from being hidden under navbar */
+}
+
+html {
+    scroll-behavior: smooth;
+}
