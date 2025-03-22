@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Adventure of Sulawesi - Exhibition</title>
-    <link rel="stylesheet" href="cok.css">
+    <link rel="stylesheet" href="A.css">
     <style>
         .slider {
             position: relative;
@@ -44,8 +44,13 @@
         .gallery-desc h3 {
             font-size: 30px; /* Increase font size for gallery item titles */
         }
-        .gallery-desc p {
-            font-size: 17px; /* Increase font size for gallery item descriptions */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
         }
     </style>
 </head>
@@ -54,7 +59,7 @@
     <!-- Top Bar -->
     <header>
         <div class="topbar">
-            <a href="index.html" class="topbar-home">9A</a> <!-- Clickable link -->
+            <a href="A.html" class="topbar-home">9A</a> <!-- Clickable link -->
             <div class="dropdown">
                 <span class="right">E-Catalogue</span>
                 <div class="dropdown-content">
@@ -75,42 +80,44 @@
     </div>
 
     <!-- Gallery Section -->
-    <div class="gallery">
-        <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-            <img src="assets/k1/lukisansul.png" alt="Exhibit 1" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Acrylic Painting of the Latimojong Mountain</h3>
-                <p>An adventure to enter deep into the tropical forest of Sulawesi, where various flora grow and have been living, like endemic plants and exotic trees. With green strokes into light and dark, there is a three-dimensional effect as if inviting the audience on a journey into the wild nature of Sulawesi. The details, like branches and shadows, can symbolize the balance of the ecosystem.
-                </p>
+    <div class="content">
+        <div class="gallery">
+            <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
+                <img src="assets/k1/lukisansul.png" alt="Exhibit 1" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Acrylic Painting of the Latimojong Mountain</h3>
+                    <p>An adventure to enter deep into the tropical forest of Sulawesi, where various flora grow and have been living, like endemic plants and exotic trees. With green strokes into light and dark, there is a three-dimensional effect as if inviting the audience on a journey into the wild nature of Sulawesi. The details, like branches and shadows, can symbolize the balance of the ecosystem.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
+            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
 
-            <img src="assets/k1/patungbatu.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Clay Statue in the Form of a Megalithic Statue Palindo</h3>
-                <p>The Palindo statue was first discovered in the early 1900s by Dr. Walter Kaudern, a Swedish ethnologist. Since then, it has become one of the most significant cultural artifacts in Indonesia, especially in Central Sulawesi. It is believed to date back to the 14th century and served in religious and ritual contexts, often associated with the practice of ancestor worship and local deities.</p>
+                <img src="assets/k1/patungbatu.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Clay Statue in the Form of a Megalithic Statue Palindo</h3>
+                    <p>The Palindo statue was first discovered in the early 1900s by Dr. Walter Kaudern, a Swedish ethnologist. Since then, it has become one of the most significant cultural artifacts in Indonesia, especially in Central Sulawesi. It is believed to date back to the 14th century and served in religious and ritual contexts, often associated with the practice of ancestor worship and local deities.</p>
+                </div>
             </div>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-            <div class="slider">
-                <img class="slides3 active" src="assets/k1/hitam 1.png" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/k1/hitam 2 png.png" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/k1/putih 1.png" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/k1/putih 2.png" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+                <div class="slider">
+                    <img class="slides3 active" src="assets/k1/hitam 1.png" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
+                    <img class="slides3" src="assets/k1/hitam 2 png.png" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
+                    <img class="slides3" src="assets/k1/putih 1.png" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
+                    <img class="slides3" src="assets/k1/putih 2.png" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <div class="gallery-desc">
+                    <h3>Screen Printing Clothes Design Traditional Sulawesi House</h3>
+                    <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko’ Ma’toto’, Lamunan Sangkutu’ Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
+                </div>
             </div>
-            <div class="gallery-desc">
-                <h3>Screen Printing Clothes Design Traditional Sulawesi House</h3>
-                <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko’ Ma’toto’, Lamunan Sangkutu’ Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
-            </div>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
-            <img src="assets/k1/stringart.jpg" alt="Exhibit 4" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>String Art of a Traditional Tongkonan Toraja House</h3>
-                <p>Tongkonan House is a traditional house typical of the Toraja people in South Sulawesi which has a deep meaning in their culture, traditions, and social life. The word Tongkonan comes from the Toraja language, namely tongkon which means "to sit," with the suffix -an which makes it mean "seat" or a gathering place for the extended family. This house not only functions as a residence, but also as a center of customary power, a place for carrying out ritual ceremonies, and a symbol of family dignity</p>
+            <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
+                <img src="assets/k1/stringart.jpg" alt="Exhibit 4" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>String Art of a Traditional Tongkonan Toraja House</h3>
+                    <p>Tongkonan House is a traditional house typical of the Toraja people in South Sulawesi which has a deep meaning in their culture, traditions, and social life. The word Tongkonan comes from the Toraja language, namely tongkon which means "to sit," with the suffix -an which makes it mean "seat" or a gathering place for the extended family. This house not only functions as a residence, but also as a center of customary power, a place for carrying out ritual ceremonies, and a symbol of family dignity</p>
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Adventure of Sulawesi - Exhibition</title>
+    <link rel="stylesheet" href="A.css">
+    <style>
+        .slider {
+            position: relative;
+            width: 200px; /* Adjust the width as needed */
+            height: auto;
+        }
+        .slides3 {
+            display: none;
+            width: 100%;
+        }
+        .slides4 {
+            display: none;
+            width: 100%;
+        }
+        .slides5 {
+            display: none;
+            width: 100%;
+        }
+        .active {
+            display: block;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            bottom: 1px; /* Changed from 0 to 1px */
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
+        .prev {
+            left: 0%;
+            bottom: 100%;
+        }
+        .next {
+            left: 70%;
+            bottom: 100%;
+        }
+        .title-section h1 {
+            font-size: 75px; /* Increase font size for the title */
+        }
+        .gallery-desc h3 {
+            font-size: 30px; /* Increase font size for gallery item titles */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <header>
+        <div class="topbar">
+            <a href="C.html" class="topbar-home">9C</a> <!-- Clickable link -->
+            <div class="dropdown">
+                <span class="right">E-Catalogue</span>
+                <div class="dropdown-content">
+                    <a href="The Adventure of Sulawesi3.html">The Adventure of Sulawesi</a>
+                    <a href="The Adventure of Kalimantan3.html">The Adventure of Kalimantan</a>
+                    <a href="The Adventure of Papua3.html">The Adventure of Papua</a>
+                    <a href="The Adventure of Java3.html">The Adventure of Java</a>
+                    <a href="The Adventure of Sumatra3.html">The Adventure of Sumatra</a>
+                    <a href="The Adventure of Bali3.html">The Adventure of Bali</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Title Section -->
+    <div class="title-section">
+        <h1>The Adventure of Java</h1>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery">
+        <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
+            <img src="assets/c4/Sangkara Java_ Ijen Terra.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
+            <div class="gallery-desc">
+                <h3>Sangkara Java: Ijen Terra</h3>
+                <p>An adventure to enter deep into the tropical forest of Sulawesi, where various flora grow and have been living, like endemic plants and exotic trees. With green strokes into light and dark, there is a three-dimensional effect as if inviting the audience on a journey into the wild nature of Sulawesi. The details, like branches and shadows, can symbolize the balance of the ecosystem.
+                </p>
+            </div>
+        </div>
+        <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
+
+            <img src="assets/c4/Sangkara Java_ Southern Sea.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
+            <div class="gallery-desc">
+                <h3>Sangkara Java: Southern Sea</h3>
+                <p>The Palindo statue was first discovered in the early 1900s by Dr. Walter Kaudern, a Swedish ethnologist. Since then, it has become one of the most significant cultural artifacts in Indonesia, especially in Central Sulawesi. It is believed to date back to the 14th century and served in religious and ritual contexts, often associated with the practice of ancestor worship and local deities.</p>
+            </div>
+        </div>
+        <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+            <div class="slider">
+                <img class="slides3 active" src="assets/c4/Golden Ink of Wayang_ Gatotkaca's might (front).jpg" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
+                <img class="slides3" src="assets/c4/Golden Ink of Wayang_ Gatotkaca's might (back).jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
+                <img class="slides3" src="assets/c4/IMG_3253.jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="gallery-desc">
+                <h3>Golden Ink of Wayang: Gatotkaca's Might</h3>
+                <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko’ Ma’toto’, Lamunan Sangkutu’ Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
+            </div>
+        </div>
+        <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
+            <div class="slider">
+                <img class="slides4 active" src="assets/c4/" alt="Exhibit 4 Image 1" style="width: 200px; height: auto;">
+                <img class="slides4" src="assets/c3/The Wonderful of Papua_ Raja Ampat 2.jpg" alt="Exhibit 4 Image 2" style="width: 200px; height: auto;">
+                <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides4(1)">&#10095;</a>
+            </div>
+            <div class="gallery-desc">
+                <h3>The Wonderful of Papua_ Raja Ampat</h3>
+                <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko’ Ma’toto’, Lamunan Sangkutu’ Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
+            </div>
+        </div>
+        <div class="gallery-item" data-title="Exhibit 6" data-description="Description of Exhibit 6">
+            <img src="assets/c4/Golden Ink of Wayang_ Madri's Loyalty & The Mountain.jpg" alt="Exhibit 6" style="width: 200px; height: auto;">
+            <div class="gallery-desc">
+                <h3>Golden Ink of Wayang: Madri's Loyalty & the Mountain</h3>
+                <p>Tongkonan House is a traditional house typical of the Toraja people in South Sulawesi which has a deep meaning in their culture, traditions, and social life. The word Tongkonan comes from the Toraja language, namely tongkon which means "to sit," with the suffix -an which makes it mean "seat" or a gathering place for the extended family. This house not only functions as a residence, but also as a center of customary power, a place for carrying out ritual ceremonies, and a symbol of family dignity</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-column">
+            <p>&copy; 2025 School Exhibition</p>
+        </div>
+        <div class="footer-column">
+            <p>Contact Person: +62 812-6474-2579</p>
+        </div>
+        <div class="footer-column">
+            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+        </div>
+        <div class="footer-column">
+            <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slides3");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function plusSlides4(n) {
+            showSlides4(slideIndex += n);
+        }
+
+        function showSlides4(n) {
+            let slides = document.getElementsByClassName("slides4");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function plusSlides5(n) {
+            showSlides5(slideIndex += n);
+        }
+
+        function showSlides5(n) {
+            let slides = document.getElementsByClassName("slides5");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

@@ -3,25 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Sulawesi - Exhibition</title>
-    <link rel="stylesheet" href="cok.css">
+    <title>The Adventure of Papua - Exhibition</title>
+    <link rel="stylesheet" href="A.css">
     <style>
+        .slider {
+            position: relative;
+            width: 200px; /* Adjust the width as needed */
+            height: auto;
+        }
+        .slides3 {
+            display: none;
+            width: 100%;
+        }
+        .slides4 {
+            display: none;
+            width: 100%;
+        }
+        .slides5 {
+            display: none;
+            width: 100%;
+        }
+        .active {
+            display: block;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            bottom: 1px; /* Changed from 0 to 1px */
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
+        .prev {
+            left: 0%;
+            bottom: 100%;
+        }
+        .next {
+            left: 70%;
+            bottom: 100%;
+        }
         .title-section h1 {
             font-size: 75px; /* Increase font size for the title */
         }
         .gallery-desc h3 {
             font-size: 30px; /* Increase font size for gallery item titles */
         }
-        .gallery-desc p {
-            font-size: 17px; /* Increase font size for gallery item descriptions */
-        }</style>
+        .gallery-desc h4 {
+            font-size: 20px; /* Increase font size for gallery item titles */
+        } 
+    </style>
 </head>
 <body>
 
     <!-- Top Bar -->
     <header>
         <div class="topbar">
-            <a href="index.html" class="topbar-home">9A</a> <!-- Clickable link -->
+            <a href="A.html" class="topbar-home">9A</a> <!-- Clickable link -->
             <div class="dropdown">
                 <span class="right">E-Catalogue</span>
                 <div class="dropdown-content">
@@ -44,35 +85,48 @@
     <!-- Gallery Section -->
     <div class="gallery">
         <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-            <img src="assets/k3/patunghitam.png" alt="Exhibit 1" style="width: 200px; height: auto;">
+            <img src="assets/c3/The Bag of Culture_ Noken.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
             <div class="gallery-desc">
-                <h3>Painting “The Sides Of Kalimantan”</h3>
-                <p>The painting titled "Sides of Kalimantan" carries the meaning that Kalimantan can create extraordinary beauty through its two distinct aspects. The first is through the culture they have inherited over generations, with a wide variety of differences. The second is through the economy and technology that continue to develop rapidly with the progression of time. These two aspects complement each other to create a more diverse, extraordinary, and beautiful harmony. This teaches us that culture and technology can create a better world if applied in balance.
-                </p>
-            </div>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
-            <img src="assets/k3/patungtopi.png" alt="Exhibit 2" style="width: 200px; height: 200px;">
-            <div class="gallery-desc">
-                <h3>Pop Art 3D “Kalimantan, The Lungs of Indonesia”</h3>
-                <p>Pop Art 3D is an artwork made primarily from paper. We create a 3D effect by stacking layers of paper, making it thicker and giving it a sense of depth. The Paperclip artwork titled "Kalimantan, the Lungs of Indonesia" tells the story of Kalimantan's rich forests and trees, which serve as a vital source of oxygen for human life. </p>
+                <h3>Scrapbook</h3>
+                <p>
+                    The scrapbook with brown material and various articles or pictures in it contains various kinds of things in Papua. By reading the contents of this scrapbook you will know various kinds of in-depth information about various variations in Papuan culture.</p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-            <img src="assets/k3/topengabu.png" alt="Exhibit 3" style="width: 200px; height: auto;">
+            <div class="slider">
+                <img class="slides3 active" src="assets/k3/patungtopi.png" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
+                <img class="slides3" src="assets/k3/patunghitam.png" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
             <div class="gallery-desc">
-                <h3>Tote Bag “The Nature Of Kalimantan”</h3>
-                <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today. </p>
+                <h3>Sculpture</h3>
+                <h4>This sculpture depicts a Papuan man sitting cross-legged in a meditative pose. With a jet-black body, he has white and red streaks adorning his body. The dominant red color symbolizes courage, spirit, and strength. The red headdress resembles feathers, adding to his majestic appearance. This sculpture is not only a beautiful display, but also a representation of Papua's rich and meaningful culture.</h4>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
-            <img src="assets/k3/topengmerah.png"Exhibit 4" style="width: 200px; height: auto;">
+            <div class="slider">
+                <img class="slides4 active" src="assets/k3/topengmerah.png" alt="Exhibit 4 Image 1" style="width: 200px; height: auto;">
+                <img class="slides4" src="assets/k3/topengabu.png" alt="Exhibit 4 Image 2" style="width: 200px; height: auto;">
+                <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides4(1)">&#10095;</a>
+            </div>
             <div class="gallery-desc">
                 <h3>Paper Mache Mask</h3>
-                <p>These masks are from the island of Papua, Indonesia. These types of masks have a very important role in their culture. They can be used in rituals and traditional ceremonies. In their rituals and ceremonies, these masks serve as a form of communication with the gods. A lot of the masks are also replicas of the gods' faces so that the god is truly never forgotten. </p>
+                <h4>These masks are from the island of Papua, Indonesia. They hold great cultural significance and play an important role in rituals and traditional ceremonies. In these rituals and ceremonies, the masks serve as a means of communication with the gods. Many of the masks are also replicas of the gods' faces, ensuring that the deity is never forgotten.</h4>
             </div>
-</div>
-</div>
+        </div>
+        <div class="gallery-item" data-title="Exhibit 5" data-description="Description of Exhibit 5">
+            <div class="slider">
+                <img class="slides5 active" src="assets/c3/The Hope From Papua_ Papuan Dream Catcher.jpg" alt="Exhibit 5 Image 1" style="width: 200px; height: auto;">
+            </div>
+            <div class="gallery-desc">
+                <h3>The Hope From Papua: Papuan Dream Catcher</h3>
+                <h4>A typical Papuan dreamcatcher is made from rattan or bamboo with a woven sago or pandan fiber net. Decorated with Cenderawasih bird feathers, shell beads, and Asmat or Dani tribal motif carvings, this dreamcatcher symbolizes protection, good luck, and a spiritual connection with nature and ancestors. In addition to functioning as a filter for bad dreams, its beauty also makes it a valuable work of art.</h4>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -89,5 +143,53 @@
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>
         </div>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slides3");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function plusSlides4(n) {
+            showSlides4(slideIndex += n);
+        }
+
+        function showSlides4(n) {
+            let slides = document.getElementsByClassName("slides4");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function plusSlides5(n) {
+            showSlides5(slideIndex += n);
+        }
+
+        function showSlides5(n) {
+            let slides = document.getElementsByClassName("slides5");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    </script>
+
 </body>
 </html>

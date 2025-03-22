@@ -5,31 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Exhibition</title>
     <link rel="stylesheet" href="cok.css">
+    <style>
+        .video-container {
+            text-align: match-parent;
+            margin: 20px 0;
+        }
+        #exhibitionVideo {
+            width: 1000px;
+            height: auto;
+            opacity: 0.9; /* Added opacity for transparency */
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <div class="topbar">
-            <a href="index.html" class="topbar-home">9A</a> <!-- Clickable link -->
+            <a href="index.html" class="topbar-home">The Adventure of Indonesia</a> <!-- Clickable link -->
             <div class="dropdown">
-                <span class="right">E-Catalogue</span>
+                <span class="right">Class</span>
                 <div class="dropdown-content">
-                    <a href="The Adventure of Sulawesi.html">The Adventure of Sulawesi</a>
-                    <a href="The Adventure of Kalimantan.html">The Adventure of Kalimantan</a>
-                    <a href="The Adventure of Papua.html">The Adventure of Papua</a>
-                    <a href="The Adventure of Java.html">The Adventure of Java</a>
-                    <a href="The Adventure of Aceh.html">The Adventure of Aceh</a>
-                    <a href="The Adventure of NTB.html">The Adventure of NTB</a>
+                    <a href="A.html">A</a>
+                    <a href="B.html">B</a>
+                    <a href="C.html">C</a>
                 </div>
             </div>
         </div>
-        <h1>Welcome to 9A's </h1>
-       <h2>"Adventures of Indonesia"</h2>
+        <h1>Adventure of Indonesia</h1>
+       <h2>ABC Art Exhibition</h2>
         <h3>About Us</h3>
         <p>aksjdlfkajsd</p>
         <p>We Are On the Cruise</p>
+        <div class="video-container">
+            <video id="exhibitionVideo" controls>
+                <source src="assets/vidiovidio.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </header>
     <div class="featured">
+        <div class="featured-row-header">Class A</div>
         <div class="gallery-item" data-title="Acrylic Painting of the Latimojong Mountain" data-description="An adventure to enter deep into the tropical forest of Sulawesi, where various flora grow and have been living, like endemic plants and exotic trees. With green strokes into light and dark, there is a three-dimensional effect as if inviting the audience on a journey into the wild nature of Sulawesi. The details, like branches and shadows, can symbolize the balance of the ecosystem.
         ">
             <img src="assets/k1/lukisansul.png" alt="Exhibit 1" width="500" height="500">
@@ -49,6 +64,46 @@
         <div class="gallery-item" data-title="Name 6" data-description="Description of Exhibit 6">
             <img src="assets/k6/gelang.jpg" alt="Exhibit 6" width="500" height="500">
         </div>
+
+        <div class="featured-row-header">Class B</div>
+        <div class="gallery-item" data-title="Name 4" data-description="Description of Exhibit 4">
+            <img src="assets/k4/crochet.jpg" alt="Exhibit 4" width="500" height="500">
+        </div> 
+        <div class="gallery-item" data-title="The Extinct Animal" data-description="Description of Exhibit 5">
+            <img src="assets/k5/rubah.png" alt="Exhibit 5" width="500" height="500"> 
+        </div>
+        <div class="gallery-item" data-title="Name 6" data-description="Description of Exhibit 6">
+            <img src="assets/k6/gelang.jpg" alt="Exhibit 6" width="500" height="500">
+        </div>
+        <div class="gallery-item" data-title="Name 6" data-description="Description of Exhibit 6">
+            <img src="assets/k6/gelang.jpg" alt="Exhibit 6" width="500" height="500">
+        </div>
+        <div class="gallery-item" data-title="Name 4" data-description="Description of Exhibit 4">
+            <img src="assets/k4/crochet.jpg" alt="Exhibit 4" width="500" height="500">
+        </div>
+        <div class="gallery-item" data-title="The Extinct Animal" data-description="Description of Exhibit 5">
+            <img src="assets/k5/rubah.png" alt="Exhibit 5" width="500" height="500"> 
+        </div>
+
+        <div class="featured-row-header">Class C</div>
+        <div class="gallery-item" data-title="Tongkrongan: House of the Brave" data-description="Description of Exhibit 6">
+            <img src="assets/c1/TONGKONAN _ HOUSE OF THE BRAVE.jpg" alt="Exhibit 6" width="500" height="500">
+        </div>
+        <div class="gallery-item" data-title="Talawang: The Traditional Shield of Dayak Warriors" data-description="Description of Exhibit 6">
+            <img src="assets/c2/Talawang_ The Traditional Shield of the Dayak Warriors.jpg" alt="Exhibit 6" width="500" height="500">
+        </div>
+        <div class="gallery-item" data-title="The Hope From Papua: Papuan Dream Catcher" data-description="Description of Exhibit 4">
+            <img src="assets/c3/The Hope From Papua_ Papuan Dream Catcher.jpg" alt="Exhibit 4" width="500" height="500">
+        </div>
+        <div class="gallery-item" data-title="Golden Ink of Wayang: Gatotkaca's Might" data-description="Description of Exhibit 5">
+            <img src="assets/c4/IMG_3253.jpg" alt="Exhibit 5" width="500" height="500"> 
+        </div>
+        <div class="gallery-item" data-title="Name 6" data-description="Description of Exhibit 6">
+            <img src="assets/k6/gelang.jpg" alt="Exhibit 6" width="500" height="500">
+        </div>
+        <div class="gallery-item" data-title="The Heart of Toba" data-description="Description of Exhibit 6">
+            <img src="assets/c6/The Heart of Toba.jpg" alt="Exhibit 6" width="500" height="500">
+        </div>
     </div>
     
     <!-- Modal -->
@@ -65,15 +120,29 @@
             <p>&copy; 2025 School Exhibition</p>
         </div>
         <div class="footer-column">
-            <p>Contact Person: +62 812-6474-2579 </p>
+            <p>Contact Person: +62 812-6139-6085 </p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/smpmardiyuanadepok_official/" target="_blank">@smpmardiyuanadepok_official</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        function toggleFullscreen() {
+            const video = document.getElementById('exhibitionVideo');
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { // Firefox
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { // IE/Edge
+                video.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Sulawesi - Exhibition</title>
-    <link rel="stylesheet" href="cok.css">
+    <title>The Adventure of Aceh - Exhibition</title>
+    <link rel="stylesheet" href="A.css">
     <style>
         .title-section h1 {
             font-size: 75px; /* Increase font size for the title */
@@ -14,14 +14,29 @@
         }
         .gallery-desc p {
             font-size: 17px; /* Increase font size for gallery item descriptions */
-        }</style>
+        }
+        .gallery-desc h4 {
+            font-size: 50px; /* Increase font size for gallery item descriptions */
+        }
+        .gallery-desc h5 {
+            font-size: 30px; /* Increase font size for gallery item descriptions */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Top Bar -->
     <header>
         <div class="topbar">
-            <a href="index.html" class="topbar-home">9A</a> <!-- Clickable link -->
+            <a href="A.html" class="topbar-home">9A</a> <!-- Clickable link -->
             <div class="dropdown">
                 <span class="right">E-Catalogue</span>
                 <div class="dropdown-content">
@@ -38,34 +53,36 @@
 
     <!-- Title Section -->
     <div class="title-section">
-        <h1>The Adventure of Papua</h1>
+        <h1>The Adventure of Aceh</h1>
     </div>
 
     <!-- Gallery Section -->
-    <div class="gallery">
-        <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-            <img src="assets/k5/phoneholder.png" alt="Exhibit 1" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Painting “The Sides Of Kalimantan”</h3>
-                <p>The painting titled "Sides of Kalimantan" carries the meaning that Kalimantan can create extraordinary beauty through its two distinct aspects. The first is through the culture they have inherited over generations, with a wide variety of differences. The second is through the economy and technology that continue to develop rapidly with the progression of time. These two aspects complement each other to create a more diverse, extraordinary, and beautiful harmony. This teaches us that culture and technology can create a better world if applied in balance.
-                </p>
+    <div class="content">
+        <div class="gallery">
+            <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
+                <img src="assets/k5/phoneholder.png" alt="Exhibit 1" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Painting “The Sides Of Kalimantan”</h3>
+                    <p>The painting titled "Sides of Kalimantan" carries the meaning that Kalimantan can create extraordinary beauty through its two distinct aspects. The first is through the culture they have inherited over generations, with a wide variety of differences. The second is through the economy and technology that continue to develop rapidly with the progression of time. These two aspects complement each other to create a more diverse, extraordinary, and beautiful harmony. This teaches us that culture and technology can create a better world if applied in balance.
+                    </p>
+                </div>
+            </div>
+            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
+                <img src="assets/k5/rubahgantung.png" alt="Exhibit 2" style="width: 200px; height: 200px;">
+                <div class="gallery-desc">
+                    <h3>Pop Art 3D “Kalimantan, The Lungs of Indonesia”</h3>
+                    <p>Pop Art 3D is an artwork made primarily from paper. We create a 3D effect by stacking layers of paper, making it thicker and giving it a sense of depth. The Paperclip artwork titled "Kalimantan, the Lungs of Indonesia" tells the story of Kalimantan's rich forests and trees, which serve as a vital source of oxygen for human life. </p>
+                </div>
+            </div>
+            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+                <img src="assets/k5/samosir.png" alt="Exhibit 3" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h4>The Extinct Animal</h4>
+                    <p1>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today. </p1>
+                </div>
             </div>
         </div>
-        <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
-            <img src="assets/k5/rubahgantung.png" alt="Exhibit 2" style="width: 200px; height: 200px;">
-            <div class="gallery-desc">
-                <h3>Pop Art 3D “Kalimantan, The Lungs of Indonesia”</h3>
-                <p>Pop Art 3D is an artwork made primarily from paper. We create a 3D effect by stacking layers of paper, making it thicker and giving it a sense of depth. The Paperclip artwork titled "Kalimantan, the Lungs of Indonesia" tells the story of Kalimantan's rich forests and trees, which serve as a vital source of oxygen for human life. </p>
-            </div>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-            <img src="assets/k5/samosir.png" alt="Exhibit 3" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>The Extinct Animal</h3>
-                <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today. </p>
-            </div>
-</div>
-</div>
+    </div>
 
     <!-- Footer -->
     <footer>
