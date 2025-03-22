@@ -5,14 +5,14 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    size: 1;
+    font-size: 1em;
     margin: 0;
     padding: 0;
     text-align: center;
     background-color: #f4f4f4;
     scroll-behavior: smooth;
     overflow-x: hidden; /* Ensure no horizontal scrolling */
-    background-image: linear-gradient(rgba(244, 244, 244, 0.5), rgba(244, 244, 244, 0.5)), url('assets/WONDERFUL OF.png'); /* Add semi-transparent overlay */
+    background-image: linear-gradient(rgba(244, 244, 244, 0.5), rgba(244, 244, 244, 0.5)), url('assets/WONDERFUL OF.png');
     background-size: cover; /* Cover the entire background */
     background-position: center; /* Center the background image */
     background-attachment: scroll; /* Make background image scroll with the page */
@@ -159,7 +159,7 @@ header {
 }
 
 .gallery-desc p {
-    font-size: em;
+    font-size: 1em;
     margin: 5px 0 0;
 }
 
@@ -397,5 +397,118 @@ h4, h5, h6 {
     .footer-column {
         width: 100%;
         padding: 5px 0;
+    }
+}
+
+/* Portrait mode for mobile devices */
+@media (max-width: 480px) and (orientation: portrait) {
+    body {
+        font-size: 0.7em;
+    }
+
+    .featured {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3px;
+        padding: 3px;
+    }
+
+    .featured img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .gallery-item, .gallery-item img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .gallery-desc {
+        padding: 8px;
+        width: 100%;
+        font-size: 0.65em;
+    }
+
+    .gallery-desc h3 {
+        font-size: 0.75em;
+    }
+
+    .gallery-desc p {
+        font-size: 0.65em;
+    }
+
+    .sliding-gallery {
+        width: 98vw;
+        height: 150px;
+    }
+
+    .topbar {
+        font-size: 0.6em;
+        padding: 6px;
+    }
+
+    .topbar .left {
+        font-size: 0.65em;
+    }
+
+    .dropdown .right {
+        font-size: 0.65em;
+    }
+
+    .dropdown-content {
+        font-size: 0.6em;
+        min-width: 120px;
+        padding: 4px 0;
+    }
+
+    .dropdown-content a {
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    body {
+        font-size: 0.75em;
+    }
+
+    .featured {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    .featured img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .gallery-item, .gallery-item img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .gallery-desc {
+        font-size: 0.7em;
+    }
+
+    .sliding-gallery {
+        width: 95vw;
+        height: 140px;
+    }
+
+    .topbar {
+        font-size: 0.65em;
+        padding: 8px;
+    }
+
+    .topbar .left {
+        font-size: 0.7em;
+    }
+
+    .dropdown .right {
+        font-size: 0.7em;
+    }
+
+    .dropdown-content {
+        font-size: 0.65em;
+        min-width: 140px;
     }
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Aceh - Exhibition</title>
+    <title>The Adventure of Bali - Exhibition</title>
     <link rel="stylesheet" href="B.css">
     <style>
         .title-section h1 {
@@ -22,6 +22,137 @@
         }
         .content {
             flex: 1;
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 20px;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 90%;
+            max-width: 800px;
+        }
+        .product-title {
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .item-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .gallery-desc {
+            flex: 1;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            color: white;
+        }
+        .gallery-desc p {
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                gap: 35px;
+                padding: 10px;
+            }
+            .gallery-item {
+                gap: 8px;
+                width: 95%;
+            }
+            .product-title {
+                font-size: 15px;
+            }
+            .item-content {
+                gap: 10px;
+            }
+            .gallery-desc {
+                padding: 8px;
+                max-height: 120px;
+                overflow-y: auto;
+            }
+            .gallery-desc::-webkit-scrollbar {
+                width: 3px;
+            }
+            .gallery-desc::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+            }
+            .gallery-desc::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 4px;
+            }
+            .gallery-desc p {
+                font-size: 11px;
+                line-height: 1.2;
+                margin: 0;
+                padding: 0;
+            }
+            .gallery-item-media {
+                width: 120px;
+                margin: 0;
+            }
+            .slider {
+                width: 120px;
+                margin: 0;
+            }
+            .slides3 {
+                width: 120px !important;
+                height: auto !important;
+                margin: 0;
+            }
+            .gallery-item img {
+                width: 120px !important;
+                height: auto !important;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            .gallery {
+                gap: 25px;
+            }
+            .gallery-item {
+                gap: 6px;
+            }
+            .product-title {
+                font-size: 14px;
+            }
+            .gallery-desc {
+                max-height: 100px;
+                padding: 6px;
+            }
+            .gallery-desc p {
+                font-size: 10px;
+                line-height: 1.2;
+            }
+            .gallery-item-media {
+                width: 100px;
+            }
+            .slider {
+                width: 100px;
+            }
+            .slides3 {
+                width: 100px !important;
+            }
+            .gallery-item img {
+                width: 100px !important;
+            }
         }
     </style>
 </head>
@@ -53,26 +184,37 @@
     <!-- Gallery Section -->
     <div class="content">
         <div class="gallery">
-            <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-                <img src="assets/k5/phoneholder.png" alt="Exhibit 1" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>Painting “The Sides Of Kalimantan”</h3>
-                    <p>The painting titled "Sides of Kalimantan" carries the meaning that Kalimantan can create extraordinary beauty through its two distinct aspects. The first is through the culture they have inherited over generations, with a wide variety of differences. The second is through the economy and technology that continue to develop rapidly with the progression of time. These two aspects complement each other to create a more diverse, extraordinary, and beautiful harmony. This teaches us that culture and technology can create a better world if applied in balance.
-                    </p>
+            <div class="gallery-item">
+                <h3 class="product-title">Painting “The Sides Of Kalimantan”</h3>
+                <div class="item-content">
+                    <div class="gallery-item-media">
+                        <img src="assets/k5/phoneholder.png" alt="Exhibit 1" style="width: 200px; height: auto;">
+                    </div>
+                    <div class="gallery-desc">
+                        <p>The painting titled "Sides of Kalimantan" carries the meaning that Kalimantan can create extraordinary beauty through its two distinct aspects. The first is through the culture they have inherited over generations, with a wide variety of differences. The second is through the economy and technology that continue to develop rapidly with the progression of time. These two aspects complement each other to create a more diverse, extraordinary, and beautiful harmony. This teaches us that culture and technology can create a better world if applied in balance.</p>
+                    </div>
                 </div>
             </div>
-            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
-                <img src="assets/k5/rubahgantung.png" alt="Exhibit 2" style="width: 200px; height: 200px;">
-                <div class="gallery-desc">
-                    <h3>Pop Art 3D “Kalimantan, The Lungs of Indonesia”</h3>
-                    <p>Pop Art 3D is an artwork made primarily from paper. We create a 3D effect by stacking layers of paper, making it thicker and giving it a sense of depth. The Paperclip artwork titled "Kalimantan, the Lungs of Indonesia" tells the story of Kalimantan's rich forests and trees, which serve as a vital source of oxygen for human life. </p>
+            <div class="gallery-item">
+                <h3 class="product-title">Pop Art 3D “Kalimantan, The Lungs of Indonesia”</h3>
+                <div class="item-content">
+                    <div class="gallery-item-media">
+                        <img src="assets/k5/rubahgantung.png" alt="Exhibit 2" style="width: 200px; height: 200px;">
+                    </div>
+                    <div class="gallery-desc">
+                        <p>Pop Art 3D is an artwork made primarily from paper. We create a 3D effect by stacking layers of paper, making it thicker and giving it a sense of depth. The Paperclip artwork titled "Kalimantan, the Lungs of Indonesia" tells the story of Kalimantan's rich forests and trees, which serve as a vital source of oxygen for human life.</p>
+                    </div>
                 </div>
             </div>
-            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-                <img src="assets/k5/samosir.png" alt="Exhibit 3" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>The Extinct Animal</h3>
-                    <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today. </p>
+            <div class="gallery-item">
+                <h3 class="product-title">The Extinct Animal</h3>
+                <div class="item-content">
+                    <div class="gallery-item-media">
+                        <img src="assets/k5/samosir.png" alt="Exhibit 3" style="width: 200px; height: auto;">
+                    </div>
+                    <div class="gallery-desc">
+                        <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today.</p>
+                    </div>
                 </div>
             </div>
         </div>

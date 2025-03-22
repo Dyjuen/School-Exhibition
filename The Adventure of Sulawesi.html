@@ -8,8 +8,9 @@
     <style>
         .slider {
             position: relative;
-            width: 200px; /* Adjust the width as needed */
+            width: 200px;
             height: auto;
+            margin: 0 auto;
         }
         .slides3 {
             display: none;
@@ -21,7 +22,7 @@
         .prev, .next {
             cursor: pointer;
             position: absolute;
-            bottom: 1px; /* Changed from 0 to 1px */
+            bottom: 1px;
             width: auto;
             padding: 16px;
             color: white;
@@ -39,18 +40,138 @@
             bottom: 100%;
         }
         .title-section h1 {
-            font-size: 75px; /* Increase font size for the title */
+            font-size: 75px;
         }
-        .gallery-desc h3 {
-            font-size: 30px; /* Increase font size for gallery item titles */
-        }
-        body {
+        .gallery {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            align-items: center;
+            gap: 40px;
+            padding: 20px;
         }
-        .content {
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 90%;
+            max-width: 800px;
+        }
+        .product-title {
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .item-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .gallery-desc {
             flex: 1;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            color: white;
+        }
+        .gallery-desc p {
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                gap: 35px;
+                padding: 10px;
+            }
+            .gallery-item {
+                gap: 8px;
+                width: 95%;
+            }
+            .product-title {
+                font-size: 15px;
+            }
+            .item-content {
+                gap: 10px;
+            }
+            .gallery-desc {
+                padding: 8px;
+                max-height: 120px;
+                overflow-y: auto;
+            }
+            .gallery-desc::-webkit-scrollbar {
+                width: 3px;
+            }
+            .gallery-desc::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+            }
+            .gallery-desc::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 4px;
+            }
+            .gallery-desc p {
+                font-size: 11px;
+                line-height: 1.2;
+                margin: 0;
+                padding: 0;
+            }
+            .gallery-item-media {
+                width: 120px;
+                margin: 0;
+            }
+            .slider {
+                width: 120px;
+                margin: 0;
+            }
+            .slides3 {
+                width: 120px !important;
+                height: auto !important;
+                margin: 0;
+            }
+            .gallery-item img {
+                width: 120px !important;
+                height: auto !important;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            .gallery {
+                gap: 25px;
+            }
+            .gallery-item {
+                gap: 6px;
+            }
+            .product-title {
+                font-size: 14px;
+            }
+            .gallery-desc {
+                max-height: 100px;
+                padding: 6px;
+            }
+            .gallery-desc p {
+                font-size: 10px;
+                line-height: 1.2;
+            }
+            .gallery-item-media {
+                width: 100px;
+            }
+            .slider {
+                width: 100px;
+            }
+            .slides3 {
+                width: 100px !important;
+            }
+            .gallery-item img {
+                width: 100px !important;
+            }
         }
     </style>
 </head>
@@ -83,40 +204,57 @@
     <div class="content">
         <div class="gallery">
             <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-                <img src="assets/k1/lukisansul.png" alt="Exhibit 1" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>Acrylic Painting of the Latimojong Mountain</h3>
-                    <p>An adventure to enter deep into the tropical forest of Sulawesi, where various flora grow and have been living, like endemic plants and exotic trees. With green strokes into light and dark, there is a three-dimensional effect as if inviting the audience on a journey into the wild nature of Sulawesi. The details, like branches and shadows, can symbolize the balance of the ecosystem.
-                    </p>
+                <h3 class="product-title">Acrylic Painting of the Latimojong Mountain</h3>
+                <div class="item-content">
+                    <div class="gallery-item-media">
+                        <img src="assets/k1/lukisansul.png" alt="Exhibit 1" style="width: 200px; height: auto;">
+                    </div>
+                    <div class="gallery-desc">
+                        <p>An adventure to enter deep into the tropical forest of Sulawesi, where various flora grow and have been living, like endemic plants and exotic trees. With green strokes into light and dark, there is a three-dimensional effect as if inviting the audience on a journey into the wild nature of Sulawesi. The details, like branches and shadows, can symbolize the balance of the ecosystem.</p>
+                    </div>
                 </div>
             </div>
-            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
 
-                <img src="assets/k1/patungbatu.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>Clay Statue in the Form of a Megalithic Statue Palindo</h3>
-                    <p>The Palindo statue was first discovered in the early 1900s by Dr. Walter Kaudern, a Swedish ethnologist. Since then, it has become one of the most significant cultural artifacts in Indonesia, especially in Central Sulawesi. It is believed to date back to the 14th century and served in religious and ritual contexts, often associated with the practice of ancestor worship and local deities.</p>
+            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
+                <h3 class="product-title">Clay Statue in the Form of a Megalithic Statue Palindo</h3>
+                <div class="item-content">
+                    <div class="gallery-item-media">
+                        <img src="assets/k1/patungbatu.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
+                    </div>
+                    <div class="gallery-desc">
+                        <p>The Palindo statue was first discovered in the early 1900s by Dr. Walter Kaudern, a Swedish ethnologist. Since then, it has become one of the most significant cultural artifacts in Indonesia, especially in Central Sulawesi. It is believed to date back to the 14th century and served in religious and ritual contexts, often associated with the practice of ancestor worship and local deities.</p>
+                    </div>
                 </div>
             </div>
+
             <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-                <div class="slider">
-                    <img class="slides3 active" src="assets/k1/hitam 1.png" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
-                    <img class="slides3" src="assets/k1/hitam 2 png.png" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                    <img class="slides3" src="assets/k1/putih 1.png" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                    <img class="slides3" src="assets/k1/putih 2.png" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                <div class="gallery-desc">
-                    <h3>Screen Printing Clothes Design Traditional Sulawesi House</h3>
-                    <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko’ Ma’toto’, Lamunan Sangkutu’ Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
+                <h3 class="product-title">Screen Printing Clothes Design Traditional Sulawesi House</h3>
+                <div class="item-content">
+                    <div class="gallery-item-media">
+                        <div class="slider">
+                            <img class="slides3 active" src="assets/k1/hitam 1.png" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
+                            <img class="slides3" src="assets/k1/hitam 2 png.png" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
+                            <img class="slides3" src="assets/k1/putih 1.png" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
+                            <img class="slides3" src="assets/k1/putih 2.png" alt="Exhibit 3 Image 4" style="width: 200px; height: auto;">
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                    </div>
+                    <div class="gallery-desc">
+                        <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko' Ma'toto', Lamunan Sangkutu' Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
+                    </div>
                 </div>
             </div>
+
             <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
-                <img src="assets/k1/stringart.jpg" alt="Exhibit 4" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>String Art of a Traditional Tongkonan Toraja House</h3>
-                    <p>Tongkonan House is a traditional house typical of the Toraja people in South Sulawesi which has a deep meaning in their culture, traditions, and social life. The word Tongkonan comes from the Toraja language, namely tongkon which means "to sit," with the suffix -an which makes it mean "seat" or a gathering place for the extended family. This house not only functions as a residence, but also as a center of customary power, a place for carrying out ritual ceremonies, and a symbol of family dignity</p>
+                <h3 class="product-title">String Art of a Traditional Tongkonan Toraja House</h3>
+                <div class="item-content">
+                    <div class="gallery-item-media">
+                        <img src="assets/k1/stringart.jpg" alt="Exhibit 4" style="width: 200px; height: auto;">
+                    </div>
+                    <div class="gallery-desc">
+                        <p>Tongkonan House is a traditional house typical of the Toraja people in South Sulawesi which has a deep meaning in their culture, traditions, and social life. The word Tongkonan comes from the Toraja language, namely tongkon which means "to sit," with the suffix -an which makes it mean "seat" or a gathering place for the extended family. This house not only functions as a residence, but also as a center of customary power, a place for carrying out ritual ceremonies, and a symbol of family dignity</p>
+                    </div>
                 </div>
             </div>
         </div>
