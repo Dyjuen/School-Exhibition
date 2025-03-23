@@ -7,42 +7,58 @@
     <link rel="stylesheet" href="A.css">
     <style>
         .title-section h1 {
-            font-size: 75px; /* Increase font size for the title */
+            font-size: 60px;
+            text-align: center;
+            margin: 30px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .gallery-desc h3 {
-            font-size: 30px; /* Increase font size for gallery item titles */
-        }
-        .gallery-desc p {
-            font-size: 17px; /* Increase font size for gallery item descriptions */
+            font-size: 30px;
+            margin-bottom: 15px;
         }
         .gallery-desc h4 {
-            font-size: 50px; /* Increase font size for gallery item descriptions */
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 0;
         }
         .gallery-desc h5 {
-            font-size: 30px; /* Increase font size for gallery item descriptions */
+            font-size: 25px;
+            line-height: 1.6;
+            margin: 0;
         }
         body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
         .content {
             flex: 1;
+            padding: 20px;
         }
         .gallery {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px;
-            padding: 20px;
+            gap: 50px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .gallery-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
-            width: 90%;
-            max-width: 800px;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .product-title {
             font-size: 30px;
@@ -53,89 +69,110 @@
         }
         .item-content {
             display: flex;
-            gap: 20px;
-            align-items: flex-start;
+            gap: 40px;
+            align-items: center;
             width: 100%;
+            padding: 0 20px;
         }
         .gallery-desc {
             flex: 1;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
             color: white;
+            min-width: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-        .gallery-desc p {
-            font-size: 17px;
-            text-align: left;
-            margin: 0;
-            color: #f4f4f4;
-            line-height: 1.5;
+        .gallery-item-media {
+            width: 300px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+        }
+        .gallery-item-media:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .title-section h1 {
+                font-size: 45px;
+                margin: 25px 0;
+            }
+            .gallery {
+                gap: 40px;
+                padding: 20px;
+            }
+            .gallery-item {
+                padding: 20px;
+            }
+            .item-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+                padding: 0 15px;
+            }
+            .gallery-item-media {
+                width: 250px;
+            }
+            .gallery-desc {
+                width: 100%;
+                padding: 25px;
+            }
         }
 
         @media (max-width: 480px) {
+            .title-section h1 {
+                font-size: 32px;
+                margin: 20px 0;
+            }
             .gallery {
-                gap: 35px;
-                padding: 10px;
+                gap: 30px;
+                padding: 15px;
             }
             .gallery-item {
-                gap: 8px;
-                width: 95%;
+                padding: 15px;
             }
             .product-title {
-                font-size: 15px;
+                font-size: 22px;
             }
             .item-content {
-                gap: 10px;
+                gap: 20px;
+                padding: 0 10px;
             }
             .gallery-desc {
-                padding: 8px;
-                max-height: 120px;
-                overflow-y: auto;
+                padding: 20px;
+                max-height: 200px;
             }
-            .gallery-desc::-webkit-scrollbar {
-                width: 3px;
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 16px;
+                line-height: 1.5;
             }
-            .gallery-desc::-webkit-scrollbar-track {
-                background: rgba(0, 0, 0, 0.3);
-                border-radius: 4px;
-            }
-            .gallery-desc::-webkit-scrollbar-thumb {
-                background: rgba(255, 255, 255, 0.3);
-                border-radius: 4px;
-            }
-            .gallery-desc p {
-                font-size: 11px;
-                line-height: 1.2;
-                margin: 0;
-                padding: 0;
-            }
-            .gallery-item img {
-                width: 120px !important;
-                height: auto !important;
-                margin: 0;
+            .gallery-item-media {
+                width: 180px;
             }
         }
 
         @media (max-width: 480px) and (orientation: landscape) {
             .gallery {
-                gap: 25px;
+                gap: 20px;
             }
             .gallery-item {
-                gap: 6px;
+                gap: 8px;
             }
             .product-title {
-                font-size: 14px;
+                font-size: 18px;
             }
             .gallery-desc {
-                max-height: 100px;
-                padding: 6px;
+                max-height: 120px;
+                padding: 12px;
             }
-            .gallery-desc p {
-                font-size: 10px;
-                line-height: 1.2;
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 14px;
             }
-            .gallery-item img {
-                width: 100px !important;
+            .gallery-item-media {
+                width: 120px;
             }
         }
     </style>
@@ -169,20 +206,20 @@
     <div class="content">
         <div class="gallery">
             <div class="gallery-item">
-                <h3 class="product-title">Painting “The Sides Of Kalimantan”</h3>
+                <h3 class="product-title">Sie Reuboh</h3>
                 <div class="item-content">
                     <img src="assets/k5/phoneholder.png" alt="Exhibit 1" style="width: 200px; height: auto;" class="gallery-item-media">
                     <div class="gallery-desc">
-                        <p>The painting titled "Sides of Kalimantan" carries the meaning that Kalimantan can create extraordinary beauty through its two distinct aspects. The first is through the culture they have inherited over generations, with a wide variety of differences. The second is through the economy and technology that continue to develop rapidly with the progression of time. These two aspects complement each other to create a more diverse, extraordinary, and beautiful harmony. This teaches us that culture and technology can create a better world if applied in balance.</p>
+                        <h4>Sie Reuboh is a mandatory dish during the meugang tradition. One family will cook sie reuboh together and eat it together. Because it lasts a long time, sie reuboh can also be stored as a sahur dish in the following days during the Ramadan fast. </h4>
                     </div>
                 </div>
             </div>
             <div class="gallery-item">
-                <h3 class="product-title">Pop Art 3D “Kalimantan, The Lungs of Indonesia”</h3>
+                <h3 class="product-title">Phone Charm: The Fabled Managerie</h3>
                 <div class="item-content">
                     <img src="assets/k5/rubahgantung.png" alt="Exhibit 2" style="width: 200px; height: 200px;" class="gallery-item-media">
                     <div class="gallery-desc">
-                        <p>Pop Art 3D is an artwork made primarily from paper. We create a 3D effect by stacking layers of paper, making it thicker and giving it a sense of depth. The Paperclip artwork titled "Kalimantan, the Lungs of Indonesia" tells the story of Kalimantan's rich forests and trees, which serve as a vital source of oxygen for human life.</p>
+                        <h4>The Sumatran rhinoceros (Dicerorhinus sumatrensis) is the smallest and most primitive of all rhino species, distinguished by its body hair. The ajak (Cuon alpinus), a wild forest dog native to South, East, and Southeast Asia, including Sumatra and Java, inhabits mountainous and forested areas and is distinct from wolves. The Sumatran elephant (Elephas maximus sumatranus), a critically endangered subspecies of the Asian elephant, is native to Sumatra and faces the threat of extinction.</h4>
                     </div>
                 </div>
             </div>
@@ -191,7 +228,7 @@
                 <div class="item-content">
                     <img src="assets/k5/samosir.png" alt="Exhibit 3" style="width: 200px; height: auto;" class="gallery-item-media">
                     <div class="gallery-desc">
-                        <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today.</p>
+                        <h5>The Sumatran tiger is a population of Panthera tigris sondaica that inhabits the island of Sumatra, Indonesia, and is the only surviving member of the Sunda tiger subspecies. It is classified as critically endangered on the IUCN Red List of Threatened Species. The wild population is estimated at between 400-500 individuals. </h5>
                     </div>
                 </div>
             </div>
