@@ -47,10 +47,58 @@
             bottom: 100%;
         }
         .title-section h1 {
-            font-size: 75px; /* Increase font size for the title */
+            font-size: 60px;
+            text-align: center;
+            margin: 30px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
         .gallery-desc h3 {
-            font-size: 30px; /* Increase font size for gallery item titles */
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
+        }
+        .gallery-desc p {
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
@@ -85,59 +133,57 @@
             <img src="assets/c2/Kalimantan Digital Poster_ Where Nature and Culture Unite.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>Kalimantan Digital Poster: Where Nature & Culture Unite</h3>
-                <p>An adventure to enter deep into the tropical forest of Sulawesi, where various flora grow and have been living, like endemic plants and exotic trees. With green strokes into light and dark, there is a three-dimensional effect as if inviting the audience on a journey into the wild nature of Sulawesi. The details, like branches and shadows, can symbolize the balance of the ecosystem.
-                </p>
+                <p>This poster depicts the rich culture and natural beauty of Kalimantan. The poster is dominated by bright yellow, giving the impression of energy and strong appeal. In the upper right corner, there is a picture of a kuyang — a mystical creature in Kalimantan mythology, giving a touch of mystery and adding to the local cultural value. In the middle of the poster, a woman is seen in traditional Dayak clothing, dancing gracefully. The presence of this Dayak dancer depicts the richness of the arts and traditions of the indigenous tribes of Kalimantan that are still preserved to this day. The combination of traditional cultural elements and mythology makes this poster not only informative, but also triggers curiosity and interest in getting to know more about Kalimantan culture. </p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
-
             <img src="assets/c2/Mandau_ The Iconic Blade of Kalimantan.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>Mandau: The Iconic Blade of Kalimantan</h3>
-                <p>The Palindo statue was first discovered in the early 1900s by Dr. Walter Kaudern, a Swedish ethnologist. Since then, it has become one of the most significant cultural artifacts in Indonesia, especially in Central Sulawesi. It is believed to date back to the 14th century and served in religious and ritual contexts, often associated with the practice of ancestor worship and local deities.</p>
-            </div>
+                <p> Mandau is a traditional weapon of the Dayak tribe in Kalimantan known as a symbol of courage, strength, and honor. Made of iron that is forged with great precision, Mandau is often decorated with fine carvings and is usually decorated with bird feathers or human hair on the handle, which adds to its aesthetic value and spiritual meaning. </p>
         </div>
         <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
             <div class="slider">
                 <img class="slides3 active" src="assets/c3/The White Gold of Papua_ Papuan White Shell.jpg" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
                 <img class="slides3" src="assets/c3/The White Gold of Papua_ Papuan White Shell 2.jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/c3/The White Gold of Papua_ Papuan White Shell 3.jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
+                <img class="slides3" src="assets/c3/The White Gold of Papua_ Papuan White Shell 3.jpg" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
             <div class="gallery-desc">
                 <h3>The White Gold of Papua: Papuan White Shell</h3>
-                <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko’ Ma’toto’, Lamunan Sangkutu’ Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
+                <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko' Ma'toto', Lamunan Sangkutu' Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
             <div class="slider">
-                <img class="slides4 active" src="assets/c2/Borneo Chic_ Traditional Meets Modern (2).jpg" alt="Exhibit 4 Image 1" style="width: 200px; height: auto;">
-                <img class="slides4" src="assets/c2/Borneo Chic_ Traditional Meets Modern (4).jpg" alt="Exhibit 4 Image 2" style="width: 200px; height: auto;">
+                <img class="slides4 active" src="assets/c2/Borneo Chic_ Traditional Meets Modern.jpg" alt="Exhibit 4 Image 1" style="width: 200px; height: auto;">
+                <img class="slides4" src="assets/c2/Borneo Chic_ Traditional Meets Modern (3).jpg" alt="Exhibit 4 Image 2" style="width: 200px; height: auto;">
                 <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides4(1)">&#10095;</a>
             </div>
             <div class="gallery-desc">
                 <h3>Borneo Chic: Traditional Meets Modern</h3>
-                <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko’ Ma’toto’, Lamunan Sangkutu’ Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
+                <p>This t-shirt features a design inspired by the rich culture of Kalimantan, especially the distinctive Dayak carving art. The black base color gives an elegant and mysterious impression, while the ethnic motif with geometric patterns reflects the strength and natural beauty of Kalimantan.
+
+                    On the front, there is a skull symbol with a head decoration of hornbill feathers — a symbol of courage and high status in Dayak culture. On the back, a larger skull image with distinctive ornamental details provides a strong and unique aesthetic touch. The words "Kalimantan Borneo" emphasize the cultural identity of this island as one of the centers of tradition and art in the archipelago.</p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 5" data-description="Description of Exhibit 5">
-            <div class="slider">
-                <img class="slides5 active" src="assets/c2/Talawang_ The Traditional Shield of the Dayak Warriors.jpg" alt="Exhibit 5 Image 1" style="width: 200px; height: auto;">
-            </div>
+            <img src="assets/c2/Talawang_ The Traditional Shield of the Dayak Warriors.jpg" alt="Exhibit 5" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>Talawang: The Traditional Shield of Dayak Warriors</h3>
-                <p>Tongkonan House is a traditional house typical of the Toraja people in South Sulawesi which has a deep meaning in their culture, traditions, and social life. The word Tongkonan comes from the Toraja language, namely tongkon which means "to sit," with the suffix -an which makes it mean "seat" or a gathering place for the extended family. This house not only functions as a residence, but also as a center of customary power, a place for carrying out ritual ceremonies, and a symbol of family dignity</p>
+                <p>Talawang is a traditional shield of the Dayak tribe in Kalimantan that is full of meaning and a symbol of strength. Made of hard ironwood and decorated with distinctive carvings, Talawang not only functions as a protector in war, but also as a symbol of courage and cultural identity of the Dayak people.
+
+                    The motifs carved on Talawang depict the harmonious relationship between humans, nature, and ancestral spirits. Every detail has a deep meaning, from strength, protection, to prosperity. In the Dayak tradition, Talawang is often used in war dances or traditional ceremonies as a symbol of pride and courage.</p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 6" data-description="Description of Exhibit 6">
             <img src="assets/c2/The Charm of Kalimantan.jpg" alt="Exhibit 6" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>The Charm of Kalimantan</h3>
-                <p>Tongkonan House is a traditional house typical of the Toraja people in South Sulawesi which has a deep meaning in their culture, traditions, and social life. The word Tongkonan comes from the Toraja language, namely tongkon which means "to sit," with the suffix -an which makes it mean "seat" or a gathering place for the extended family. This house not only functions as a residence, but also as a center of customary power, a place for carrying out ritual ceremonies, and a symbol of family dignity</p>
+                <p>This poster depicts the rich culture and natural beauty of Kalimantan. The poster is dominated by bright yellow, giving the impression of energy and strong appeal. In the upper right corner, there is a picture of a kuyang — a mystical creature in Kalimantan mythology, giving a touch of mystery and adding to the local cultural value. In the middle of the poster, a woman is seen in traditional Dayak clothing, dancing gracefully. The presence of this Dayak dancer depicts the richness of the arts and traditions of the indigenous tribes of Kalimantan that are still preserved to this day. The combination of traditional cultural elements and mythology makes this poster not only informative, but also triggers curiosity and interest in getting to know more about Kalimantan culture..</p>
             </div>
-        </div>
         </div>
     </div>
 

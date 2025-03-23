@@ -7,19 +7,58 @@
     <link rel="stylesheet" href="B.css">
     <style>
         .title-section h1 {
-            font-size: 75px; /* Increase font size for the title */
+            font-size: 60px;
+            text-align: center;
+            margin: 30px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
         .gallery-desc h3 {
-            font-size: 30px; /* Increase font size for gallery item titles */
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
         }
         .gallery-desc p {
-            font-size: 17px; /* Increase font size for gallery item descriptions */
-        }
-        .gallery-desc h4 {
-            font-size: 30px; /* Increase font size for gallery item descriptions */
-        }
-        .gallery-desc h5 {
-            font-size: 20px; /* Increase font size for gallery item descriptions */
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         body {
             display: flex;
@@ -28,6 +67,44 @@
         }
         .content {
             flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .title-section h1 {
+                font-size: 45px;
+                margin: 25px 0;
+            }
+            .gallery {
+                gap: 40px;
+                padding: 20px;
+            }
+            .gallery-item {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-section h1 {
+                font-size: 32px;
+                margin: 20px 0;
+            }
+            .gallery {
+                gap: 30px;
+                padding: 15px;
+            }
+            .gallery-item {
+                padding: 15px;
+            }
+            .gallery-desc {
+                padding: 20px;
+            }
+            .gallery-desc h3 {
+                font-size: 22px;
+            }
+            .gallery-desc p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
         }
     </style>
 </head>
@@ -70,14 +147,14 @@
                 <img src="assets/b1/IMG_0371.JPG" alt="Exhibit 2" style="width: 200px; height: 200px;">
                 <div class="gallery-desc">
                     <h3>Minangkabau's Hat</h3>
-                    <h5>This Minangkabau hat is one part of the traditional clothing of Minangkabau, West Sumatra. This hat is used for women.</h5>
+                    <p>This Minangkabau hat is one part of the traditional clothing of Minangkabau, West Sumatra. This hat is used for women.</p>
                 </div>
             </div>
             <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
                 <img src="assets/b1/IMG_0331.JPG" alt="Exhibit 3" style="width: 200px; height: auto;">
                 <div class="gallery-desc">
-                    <h3>T-shirt with Culture Design and Language of Minangkabau, Sumatra Barat.</h3>
-                    <h4>The clothes that designed with a touch of traditional clothing and language from Minangkabau, West Sumatra. </h4>
+                    <h3>T-shirt with Culture Design and Language of Minangkabau, Sumatra Barat</h3>
+                    <p>The clothes that designed with a touch of traditional clothing and language from Minangkabau, West Sumatra.</p>
                 </div>
             </div>
         </div>

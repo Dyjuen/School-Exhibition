@@ -7,14 +7,60 @@
     <link rel="stylesheet" href="C.css">
     <style>
         .title-section h1 {
-            font-size: 75px; /* Increase font size for the title */
+            font-size: 60px;
+            text-align: center;
+            margin: 30px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
         .gallery-desc h3 {
-            font-size: 30px; /* Increase font size for gallery item titles */
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
         }
         .gallery-desc p {
-            font-size: 17px; /* Increase font size for gallery item descriptions */
-        }</style>
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+    </style>
 </head>
 <body>
 
@@ -46,41 +92,43 @@
         <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
             <img src="assets/c1/ROOSTER OF HASANNUDIN.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
             <div class="gallery-desc">
-                <h3>Rooster of Hasannudin”</h3>
-                <p>The painting titled "Sides of Kalimantan" carries the meaning that Kalimantan can create extraordinary beauty through its two distinct aspects. The first is through the culture they have inherited over generations, with a wide variety of differences. The second is through the economy and technology that continue to develop rapidly with the progression of time. These two aspects complement each other to create a more diverse, extraordinary, and beautiful harmony. This teaches us that culture and technology can create a better world if applied in balance.
-                </p>
+                <h3>Rooster of Hasannudin</h3>
+                <p>The painting titled "Sides of Kalimantan" carries the meaning that Kalimantan can create extraordinary beauty through its two distinct aspects. The first is through the culture they have inherited over generations, with a wide variety of differences. The second is through the economy and technology that continue to develop rapidly with the progression of time. These two aspects complement each other to create a more diverse, extraordinary, and beautiful harmony. This teaches us that culture and technology can create a better world if applied in balance.</p>
             </div>
         </div>
+
         <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
-            <img src="assets/c1/THE BEAUTY OF SOMBORI.jpg" alt="Exhibit 2" style="width: 200px; height: 200px;">
+            <img src="assets/c1/THE BEAUTY OF SOMBORI.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
             <div class="gallery-desc">
-                <h3>The Beauty of Sombori”</h3>
-                <p>Pop Art 3D is an artwork made primarily from paper. We create a 3D effect by stacking layers of paper, making it thicker and giving it a sense of depth. The Paperclip artwork titled "Kalimantan, the Lungs of Indonesia" tells the story of Kalimantan's rich forests and trees, which serve as a vital source of oxygen for human life. </p>
+                <h3>The Beauty of Sombori</h3>
+                <p>Pop Art 3D is an artwork made primarily from paper. We create a 3D effect by stacking layers of paper, making it thicker and giving it a sense of depth. The Paperclip artwork titled "Kalimantan, the Lungs of Indonesia" tells the story of Kalimantan's rich forests and trees, which serve as a vital source of oxygen for human life.</p>
             </div>
         </div>
+
         <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
             <img src="assets/c1/THE BLUE OF BUNAKEN.jpg" alt="Exhibit 3" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>The Blue of Bunaken</h3>
-                <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today. </p>
+                <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today.</p>
             </div>
         </div>
-        <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+
+        <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
             <img src="assets/c1/THE COLORS OF SULAWESI _ BEGONIA FLOWERS.jpg" alt="Exhibit 4" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>The Colors of Sulawesi</h3>
-                <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today. </p>
+                <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today.</p>
             </div>
         </div>
-        <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+
+        <div class="gallery-item" data-title="Exhibit 5" data-description="Description of Exhibit 5">
             <img src="assets/c1/TONGKONAN _ HOUSE OF THE BRAVE.jpg" alt="Exhibit 5" style="width: 200px; height: auto;">
             <div class="gallery-desc">
-                <h3>The Tongkrongan: House of the Brave</h3>
-                <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today. </p>
+                <h3>The Tongkonan: House of the Brave</h3>
+                <p>This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today.</p>
             </div>
-            
-</div>
-</div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>

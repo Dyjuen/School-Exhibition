@@ -59,29 +59,32 @@
             padding: 25px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
-        .product-title {
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        .gallery-desc h3 {
             font-size: 30px;
             color: white;
             text-align: center;
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
         }
-        .item-content {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            width: 100%;
-            padding: 0 20px;
-        }
-        .gallery-desc {
-            flex: 1;
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 12px;
-            color: white;
-            min-width: 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        .gallery-desc p {
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .gallery-item-media {
             width: 300px;
@@ -90,6 +93,8 @@
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s ease;
+            position: relative;
+            z-index: 2;
         }
         .gallery-item-media:hover {
             transform: scale(1.05);
@@ -108,17 +113,20 @@
                 padding: 20px;
             }
             .item-content {
-                flex-direction: column;
-                align-items: center;
+                display: grid;
+                grid-template-columns: 1fr;
                 gap: 25px;
                 padding: 0 15px;
             }
             .gallery-item-media {
                 width: 250px;
+                margin: 0 auto;
             }
             .gallery-desc {
                 width: 100%;
                 padding: 25px;
+                position: relative;
+                order: unset;
             }
         }
 
@@ -134,23 +142,26 @@
             .gallery-item {
                 padding: 15px;
             }
-            .product-title {
-                font-size: 22px;
-            }
             .item-content {
+                display: grid;
+                grid-template-columns: 1fr;
                 gap: 20px;
                 padding: 0 10px;
             }
+            .gallery-item-media {
+                width: 180px;
+                margin: 0 auto 15px auto;
+            }
             .gallery-desc {
                 padding: 20px;
-                max-height: 200px;
+                width: 100%;
+                position: relative;
+                z-index: 1;
             }
             .gallery-desc h4, .gallery-desc h5 {
                 font-size: 16px;
                 line-height: 1.5;
-            }
-            .gallery-item-media {
-                width: 180px;
+                margin: 0;
             }
         }
 
@@ -205,31 +216,25 @@
     <!-- Gallery Section -->
     <div class="content">
         <div class="gallery">
-            <div class="gallery-item">
-                <h3 class="product-title">Sie Reuboh</h3>
-                <div class="item-content">
-                    <img src="assets/k5/phoneholder.png" alt="Exhibit 1" style="width: 200px; height: auto;" class="gallery-item-media">
-                    <div class="gallery-desc">
-                        <h4>Sie Reuboh is a mandatory dish during the meugang tradition. One family will cook sie reuboh together and eat it together. Because it lasts a long time, sie reuboh can also be stored as a sahur dish in the following days during the Ramadan fast. </h4>
-                    </div>
+            <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
+                <img src="assets/k5/phoneholder.png" alt="Exhibit 1" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Sie Reuboh</h3>
+                    <p>Sie Reuboh is a mandatory dish during the meugang tradition. One family will cook sie reuboh together and eat it together. Because it lasts a long time, sie reuboh can also be stored as a sahur dish in the following days during the Ramadan fast.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <h3 class="product-title">Phone Charm: The Fabled Managerie</h3>
-                <div class="item-content">
-                    <img src="assets/k5/rubahgantung.png" alt="Exhibit 2" style="width: 200px; height: 200px;" class="gallery-item-media">
-                    <div class="gallery-desc">
-                        <h4>The Sumatran rhinoceros (Dicerorhinus sumatrensis) is the smallest and most primitive of all rhino species, distinguished by its body hair. The ajak (Cuon alpinus), a wild forest dog native to South, East, and Southeast Asia, including Sumatra and Java, inhabits mountainous and forested areas and is distinct from wolves. The Sumatran elephant (Elephas maximus sumatranus), a critically endangered subspecies of the Asian elephant, is native to Sumatra and faces the threat of extinction.</h4>
-                    </div>
+            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
+                <img src="assets/k5/rubahgantung.png" alt="Exhibit 2" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Phone Charm: The Fabled Managerie</h3>
+                    <p>The Sumatran rhinoceros (Dicerorhinus sumatrensis) is the smallest and most primitive of all rhino species, distinguished by its body hair. The ajak (Cuon alpinus), a wild forest dog native to South, East, and Southeast Asia, including Sumatra and Java, inhabits mountainous and forested areas and is distinct from wolves. The Sumatran elephant (Elephas maximus sumatranus), a critically endangered subspecies of the Asian elephant, is native to Sumatra and faces the threat of extinction.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <h3 class="product-title">The Extinct Animal</h3>
-                <div class="item-content">
-                    <img src="assets/k5/samosir.png" alt="Exhibit 3" style="width: 200px; height: auto;" class="gallery-item-media">
-                    <div class="gallery-desc">
-                        <h5>The Sumatran tiger is a population of Panthera tigris sondaica that inhabits the island of Sumatra, Indonesia, and is the only surviving member of the Sunda tiger subspecies. It is classified as critically endangered on the IUCN Red List of Threatened Species. The wild population is estimated at between 400-500 individuals. </h5>
-                    </div>
+            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+                <img src="assets/k5/samosir.png" alt="Exhibit 3" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>The Extinct Animal</h3>
+                    <p>The Sumatran tiger is a population of Panthera tigris sondaica that inhabits the island of Sumatra, Indonesia, and is the only surviving member of the Sunda tiger subspecies. It is classified as critically endangered on the IUCN Red List of Threatened Species. The wild population is estimated at between 400-500 individuals.</p>
                 </div>
             </div>
         </div>

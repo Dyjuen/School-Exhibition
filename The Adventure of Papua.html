@@ -47,14 +47,62 @@
             bottom: 100%;
         }
         .title-section h1 {
-            font-size: 75px; /* Increase font size for the title */
+            font-size: 60px;
+            text-align: center;
+            margin: 30px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .gallery-desc h3 {
-            font-size: 30px; /* Increase font size for gallery item titles */
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
         }
         .gallery-desc h4 {
             font-size: 20px; /* Increase font size for gallery item titles */
-        } 
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        .gallery-desc p {
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
     </style>
 </head>
 <body>
@@ -88,8 +136,7 @@
             <img src="assets/c3/The Bag of Culture_ Noken.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>Scrapbook</h3>
-                <p>
-                    The scrapbook with brown material and various articles or pictures in it contains various kinds of things in Papua. By reading the contents of this scrapbook you will know various kinds of in-depth information about various variations in Papuan culture.</p>
+                <p>The scrapbook with brown material and various articles or pictures in it contains various kinds of things in Papua. By reading the contents of this scrapbook you will know various kinds of in-depth information about various variations in Papuan culture.</p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
@@ -101,7 +148,7 @@
             </div>
             <div class="gallery-desc">
                 <h3>Sculpture</h3>
-                <h4>This sculpture depicts a Papuan man sitting cross-legged in a meditative pose. With a jet-black body, he has white and red streaks adorning his body. The dominant red color symbolizes courage, spirit, and strength. The red headdress resembles feathers, adding to his majestic appearance. This sculpture is not only a beautiful display, but also a representation of Papua's rich and meaningful culture.</h4>
+                <p>This sculpture depicts a Papuan man sitting cross-legged in a meditative pose. With a jet-black body, he has white and red streaks adorning his body. The dominant red color symbolizes courage, spirit, and strength. The red headdress resembles feathers, adding to his majestic appearance. This sculpture is not only a beautiful display, but also a representation of Papua's rich and meaningful culture.</p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
@@ -113,7 +160,7 @@
             </div>
             <div class="gallery-desc">
                 <h3>Paper Mache Mask</h3>
-                <h4>These masks are from the island of Papua, Indonesia. They hold great cultural significance and play an important role in rituals and traditional ceremonies. In these rituals and ceremonies, the masks serve as a means of communication with the gods. Many of the masks are also replicas of the gods' faces, ensuring that the deity is never forgotten.</h4>
+                <p>These masks are from the island of Papua, Indonesia. They hold great cultural significance and play an important role in rituals and traditional ceremonies. In these rituals and ceremonies, the masks serve as a means of communication with the gods. Many of the masks are also replicas of the gods' faces, ensuring that the deity is never forgotten.</p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 5" data-description="Description of Exhibit 5">
@@ -122,9 +169,8 @@
             </div>
             <div class="gallery-desc">
                 <h3>The Hope From Papua: Papuan Dream Catcher</h3>
-                <h4>A typical Papuan dreamcatcher is made from rattan or bamboo with a woven sago or pandan fiber net. Decorated with Cenderawasih bird feathers, shell beads, and Asmat or Dani tribal motif carvings, this dreamcatcher symbolizes protection, good luck, and a spiritual connection with nature and ancestors. In addition to functioning as a filter for bad dreams, its beauty also makes it a valuable work of art.</h4>
+                <p>A typical Papuan dreamcatcher is made from rattan or bamboo with a woven sago or pandan fiber net. Decorated with Cenderawasih bird feathers, shell beads, and Asmat or Dani tribal motif carvings, this dreamcatcher symbolizes protection, good luck, and a spiritual connection with nature and ancestors. In addition to functioning as a filter for bad dreams, its beauty also makes it a valuable work of art.</p>
             </div>
-        </div>
         </div>
     </div>
 

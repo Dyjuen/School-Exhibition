@@ -7,13 +7,65 @@
     <link rel="stylesheet" href="B.css">
     <style>
         .title-section h1 {
-            font-size: 75px; /* Increase font size for the title */
+            font-size: 60px;
+            text-align: center;
+            margin: 30px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
         .gallery-desc h3 {
-            font-size: 30px; /* Increase font size for gallery item titles */
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
+        }
+        .item-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            width: 100%;
+            padding: 0 20px;
+            position: relative;
+        }
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
         }
         .gallery-desc p {
-            font-size: 17px; /* Increase font size for gallery item descriptions */
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         body {
             display: flex;
@@ -23,7 +75,60 @@
         .content {
             flex: 1;
         }
-        </style>
+
+        @media (max-width: 768px) {
+            .title-section h1 {
+                font-size: 45px;
+                margin: 25px 0;
+            }
+            .gallery {
+                gap: 40px;
+                padding: 20px;
+            }
+            .gallery-item {
+                padding: 20px;
+            }
+            .item-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+                padding: 0 15px;
+            }
+            .gallery-desc {
+                width: 100%;
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-section h1 {
+                font-size: 32px;
+                margin: 20px 0;
+            }
+            .gallery {
+                gap: 30px;
+                padding: 15px;
+            }
+            .gallery-item {
+                padding: 15px;
+            }
+            .gallery-desc h3 {
+                font-size: 22px;
+            }
+            .item-content {
+                gap: 20px;
+                padding: 0 10px;
+            }
+            .gallery-desc {
+                padding: 20px;
+                max-height: 200px;
+            }
+            .gallery-desc p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -83,12 +188,12 @@
             <div class="gallery-item" data-title="Exhibit 6" data-description="Description of Exhibit 6">
                 <img src="assets/b4/IMG_0249.JPG" alt="Exhibit 6" style="width: 200px; height: auto;">
                 <div class="gallery-desc">
-                    <h3>“Tribute the Diversity”
+                    <h3>"Tribute the Diversity"
 
                     </h3>
-                    <p>“Tribute the Diversity”, a digital painting/poster about the importance of respecting and tributing diversity, for example papuan diversity.
+                    <p>"Tribute the Diversity", a digital painting/poster about the importance of respecting and tributing diversity, for example papuan diversity.
 
-                        Papua is one of Indonesian’s island that has a really beautiful diversity, especially the people. Sweet-brown skin, exotic locks/curls, and facial shape. The diversity is even more beautiful added with their amazing culture. The accessories, hairstyle, face paint, and many more.
+                        Papua is one of Indonesian's island that has a really beautiful diversity, especially the people. Sweet-brown skin, exotic locks/curls, and facial shape. The diversity is even more beautiful added with their amazing culture. The accessories, hairstyle, face paint, and many more.
                         
                         Papuan people are very beautiful, just like how they are portrayed on this painting. </p>
                 </div>
@@ -99,7 +204,7 @@
                     <h3>Papuan Diversity</h3>          
                     <p>Papuan Diversity is a digital painting/poster about the importance of respecting and tributing diversity, for example papuan diversity.
 
-                        Papua is one of Indonesian’s island that has a really beautiful diversity, especially the people. Sweet-brown skin, exotic locks/curls, and facial shape. The diversity is even more beautiful added with their amazing culture. The accessories, hairstyle, face paint, and many more.
+                        Papua is one of Indonesian's island that has a really beautiful diversity, especially the people. Sweet-brown skin, exotic locks/curls, and facial shape. The diversity is even more beautiful added with their amazing culture. The accessories, hairstyle, face paint, and many more.
                         
                         Papuan people are very beautiful, just like how they are portrayed on this painting. </p>
             </div>

@@ -39,10 +39,58 @@
             bottom: 100%;
         }
         .title-section h1 {
-            font-size: 75px; /* Increase font size for the title */
+            font-size: 60px;
+            text-align: center;
+            margin: 30px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
         .gallery-desc h3 {
-            font-size: 30px; /* Increase font size for gallery item titles */
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
+        }
+        .gallery-desc p {
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         body {
             display: flex;
@@ -84,9 +132,8 @@
         <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
             <img src="assets/b3/IMG_0385.JPG" alt="Exhibit 1" style="width: 200px; height: auto;">
             <div class="gallery-desc">
-                <h3>“The Wonders of Banjarmasin” Poster
-                </h3>
-                <p>The Wonders of Banjarmasin is a poster that contains the picture of tourist attractions or iconic places from the city of Banjarmasin, such as Menara Pandang, Taman Kelayan, Patung Bekantan and Pasar terapung. </p>
+                <h3>"The Wonders of Banjarmasin" Poster</h3>
+                <p>The Wonders of Banjarmasin is a poster that contains the picture of tourist attractions or iconic places from the city of Banjarmasin, such as Menara Pandang, Taman Kelayan, Patung Bekantan and Pasar terapung.</p>
             </div>
         </div>  
             
@@ -102,9 +149,8 @@
         <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
             <img src="assets/b3/IMG_0367.JPG" alt="Exhibit 4" style="width: 200px; height: auto;">
             <div class="gallery-desc">
-                <h3>“The House of the Nobles” in Banjarmasin
-                </h3>
-                    <p>“The House of the Nobles” in Banjarmasin is a "Bubungan Tinggi" house which is a traditional house from South Kalimantan. As the name implies, this house is higher than the usual houses, because the area around the house is filled with swamps and rivers and also this house was a house for the nobles in the past.  In the yard of the house, there is a typical South Kalimantan game, namely "Balogo" which is usually played by children to adults in South Kalimantan.</p>
+                <h3>"The House of the Nobles" in Banjarmasin</h3>
+                    <p>"The House of the Nobles" in Banjarmasin is a "Bubungan Tinggi" house which is a traditional house from South Kalimantan. As the name implies, this house is higher than the usual houses, because the area around the house is filled with swamps and rivers and also this house was a house for the nobles in the past.  In the yard of the house, there is a typical South Kalimantan game, namely "Balogo" which is usually played by children to adults in South Kalimantan.</p>
         </div>
         </div>
     </div>

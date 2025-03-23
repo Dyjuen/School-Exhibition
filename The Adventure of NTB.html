@@ -39,13 +39,58 @@
             bottom: 100%;
         }
         .title-section h1 {
-            font-size: 75px; /* Increase font size for the title */
+            font-size: 60px;
+            text-align: center;
+            margin: 30px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
         .gallery-desc h3 {
-            font-size: 30px; /* Increase font size for gallery item titles */
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
         }
-        .gallery-desc h4 {
-            font-size: 23px; /* Increase font size for gallery item titles */
+        .gallery-desc p {
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         body {
             display: flex;
@@ -83,45 +128,44 @@
     </div>
 
     <!-- Gallery Section -->
-    <div class="content">
-        <div class="gallery">
-            <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-                <img src="assets/k6/gelang.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>NTB Ethnic Bracelet</h3>
-                    <h4>The NTB Ethnic bracelet symbolizes cultural identity, perseverance, unity, and social status. Besides being an aesthetic accessory, it is also believed to bring good luck and positive energy.
-                    </h4>
-                </div>
+    <div class="gallery">
+        <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
+            <img src="assets/k6/gelang.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
+            <div class="gallery-desc">
+                <h3>NTB Ethnic Bracelet</h3>
+                <p>The NTB Ethnic bracelet symbolizes cultural identity, perseverance, unity, and social status. Besides being an aesthetic accessory, it is also believed to bring good luck and positive energy.</p>
             </div>
-            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
+        </div>
 
-                <img src="assets/k1/patungbatu.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>Clay Statue in the Form of a Megalithic Statue Palindo</h3>
-                    <p>The Palindo statue was first discovered in the early 1900s by Dr. Walter Kaudern, a Swedish ethnologist. Since then, it has become one of the most significant cultural artifacts in Indonesia, especially in Central Sulawesi. It is believed to date back to the 14th century and served in religious and ritual contexts, often associated with the practice of ancestor worship and local deities.</p>
-                </div>
+        <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
+            <img src="assets/k1/patungbatu.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
+            <div class="gallery-desc">
+                <h3>Clay Statue in the Form of a Megalithic Statue Palindo</h3>
+                <p>The Palindo statue was first discovered in the early 1900s by Dr. Walter Kaudern, a Swedish ethnologist. Since then, it has become one of the most significant cultural artifacts in Indonesia, especially in Central Sulawesi. It is believed to date back to the 14th century and served in religious and ritual contexts, often associated with the practice of ancestor worship and local deities.</p>
             </div>
-            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-                <div class="slider">
-                    <img class="slides3 active" src="assets/k6/IMG-20250322-WA0003.jpg" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
-                    <img class="slides3" src="assets/k6/IMG-20250322-WA0004.jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                    <img class="slides3" src="assets/k6/IMG-20250322-WA0005.jpg" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                    <img class="slides3" src="assets/k6/IMG-20250322-WA0006.jpg" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                    <img class="slides3" src="assets/k6/IMG-20250322-WA0007.jpg" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                <div class="gallery-desc">
-                    <h3>Batik Motif Coaster</h3>
-                    <h4>This coaster is made from clay and decorated with a Batik NTB pattern. It protects tables from heat and stains while also looking decorative. The acrylic paint and resin coating make it glossy, durable,and it also works well as a decoration.</h4>
-                </div>
+        </div>
+
+        <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+            <div class="slider">
+                <img class="slides3 active" src="assets/k6/IMG-20250322-WA0003.jpg" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
+                <img class="slides3" src="assets/k6/IMG-20250322-WA0004.jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
+                <img class="slides3" src="assets/k6/IMG-20250322-WA0005.jpg" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
+                <img class="slides3" src="assets/k6/IMG-20250322-WA0006.jpg" alt="Exhibit 3 Image 4" style="width: 200px; height: auto;">
+                <img class="slides3" src="assets/k6/IMG-20250322-WA0007.jpg" alt="Exhibit 3 Image 5" style="width: 200px; height: auto;">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
-                <img src="assets/k1/stringart.jpg" alt="Exhibit 4" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>String Art of a Traditional Tongkonan Toraja House</h3>
-                    <p>Tongkonan House is a traditional house typical of the Toraja people in South Sulawesi which has a deep meaning in their culture, traditions, and social life. The word Tongkonan comes from the Toraja language, namely tongkon which means "to sit," with the suffix -an which makes it mean "seat" or a gathering place for the extended family. This house not only functions as a residence, but also as a center of customary power, a place for carrying out ritual ceremonies, and a symbol of family dignity</p>
-                </div>
+            <div class="gallery-desc">
+                <h3>Batik Motif Coaster</h3>
+                <p>This coaster is made from clay and decorated with a Batik NTB pattern. It protects tables from heat and stains while also looking decorative. The acrylic paint and resin coating make it glossy, durable, and it also works well as a decoration.</p>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
+            <img src="assets/k1/stringart.jpg" alt="Exhibit 4" style="width: 200px; height: auto;">
+            <div class="gallery-desc">
+                <h3>String Art of a Traditional Tongkonan Toraja House</h3>
+                <p>Tongkonan House is a traditional house typical of the Toraja people in South Sulawesi which has a deep meaning in their culture, traditions, and social life. The word Tongkonan comes from the Toraja language, namely tongkon which means "to sit," with the suffix -an which makes it mean "seat" or a gathering place for the extended family. This house not only functions as a residence, but also as a center of customary power, a place for carrying out ritual ceremonies, and a symbol of family dignity</p>
             </div>
         </div>
     </div>
