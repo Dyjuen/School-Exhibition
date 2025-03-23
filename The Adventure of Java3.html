@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
     <title>The Adventure of Java - Exhibition</title>
-    <link rel="stylesheet" href="A.css">
+    <link rel="stylesheet" href="c.css">
     <style>
         .slider {
             position: relative;
             width: 200px;
-            height: auto;
+            height: 200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .slides3, .slides4, .slides5 {
+        .slides3 {
             display: none;
-            width: 100%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .active {
             display: block;
@@ -21,22 +29,29 @@
         .prev, .next {
             cursor: pointer;
             position: absolute;
-            bottom: 1px;
-            width: auto;
-            padding: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            z-index: 3;
+            transition: 0.3s ease;
         }
         .prev {
-            left: 0%;
-            bottom: 100%;
+            left: -50px;
         }
         .next {
-            left: 70%;
-            bottom: 100%;
+            right: -50px;
+        }
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
         }
         .title-section h1 {
             font-size: 60px;
@@ -92,6 +107,64 @@
             line-height: 1.6;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
+        .gallery-desc h4 {
+            font-size: 50px; /* Increase font size for gallery item descriptions */
+        }
+        .gallery-desc h5 {
+            font-size: 30px; /* Increase font size for gallery item descriptions */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 90%;
+            max-width: 800px;
+        }
+        .item-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .product-title {
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery-desc {
+            flex: 1;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            color: white;
+        }
+        .gallery-desc p {
+            font-size: 17px;
+            text-align: left;
+            margin: 0;
+            color: #f4f4f4;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .prev {
+                left: 10px;
+            }
+            .next {
+                right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -108,7 +181,7 @@
                     <a href="The Adventure of Papua3.html">The Adventure of Papua</a>
                     <a href="The Adventure of Java3.html">The Adventure of Java</a>
                     <a href="The Adventure of Sumatra3.html">The Adventure of Sumatra</a>
-                    <a href="The Adventure of Bali3.html">The Adventure of Bali</a>
+                    <a href="The Adventure of Bali3.html">The Adventure of NTB</a>
                 </div>
             </div>
         </div>
@@ -119,9 +192,9 @@
         <h1>The Adventure of Java</h1>
     </div>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section with Slider -->
     <div class="gallery">
-        <div class="gallery-item">
+        <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
             <img src="assets/c4/Sangkara Java_ Ijen Terra.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>Sangkara Java: Ijen Terra</h3>
@@ -129,7 +202,7 @@
             </div>
         </div>
 
-        <div class="gallery-item">
+        <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
             <img src="assets/c4/Sangkara Java_ Southern Sea.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>Sangkara Java: Southern Sea</h3>
@@ -138,39 +211,60 @@
         </div>
 
         <div class="gallery-item">
-            <img src="assets/c4/asasasasasas.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Keychain of Story
-                </h3>
-                <p> The Keychain of Story features keychains designed with characters from various Javanese folklore. Presenting the Indonesian Hulk (Buto Ijo), the mystical Southern Queen (Nyi Roro Kidul), and the fearless Pitung—each implies in a cartoonish art style that adds humor to Indonesia's rich storytelling tradition. Perfect for anyone who loves a compact story on their keychain. </p>
-            </div>
-        </div>
-
-
-
-        <div class="gallery-item">
             <div class="slider">
-                <img class="slides3 active" src="assets/c4/Golden Ink of Wayang_ Gatotkaca's might (front).jpg" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/c4/Golden Ink of Wayang_ Gatotkaca's might (back).jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/c4/IMG_3253.jpg" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <img class="slides3 active" src="assets/c4/Golden Ink of Wayang_ Gatotkaca's might (front).jpg" alt="Exhibit 3 Image 1">
+                <img class="slides3" src="assets/c4/Golden Ink of Wayang_ Gatotkaca's might (back).jpg" alt="Exhibit 3 Image 2">
+                <img class="slides3" src="assets/c4/IMG_3253.jpg" alt="Exhibit 3 Image 3">
+                <a class="prev" onclick="plusSlides(-1, 'slides3')">❮</a>
+                <a class="next" onclick="plusSlides(1, 'slides3')">❯</a>
             </div>
             <div class="gallery-desc">
                 <h3>Golden Ink of Wayang: Gatotkaca's Might</h3>
-                <p>The Golden Ink of Wayang features screen-printed T-shirts and tote bags showcasing characters from the Epic of Mahabharata. The Golden Ink of Wayang: Gatotkaca's Might (T-shirt) symbolizes the strength and heroism of the legendary warrior Gatotkaca, while The Golden Ink of Wayang: Gatotkaca's Might (Tote-bag) represents the grace and devotion of Goddess Madri. Both designs capture the glory of Javanese Wayang history, while offering a modern impression that preserves the depth of Javanese culture.
-                </p>
+                <p>Gatotkaca is one of the most powerful and beloved characters in Javanese wayang (shadow puppet) tradition. Known for his extraordinary strength and ability to fly, he represents courage, loyalty, and protection. This artwork celebrates his legendary might through traditional Javanese artistic elements combined with modern design techniques.</p>
             </div>
         </div>
 
-        <div class="gallery-item">
-            <img src="assets/c4/Golden Ink of Wayang_ Madri's Loyalty & The Mountain.jpg" alt="Exhibit 4" style="width: 200px; height: auto;">
+        <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
+            <div class="slider">
+                <img class="slides4 active" src="assets/c4/Golden Ink of Wayang_ Madri's Loyalty & The Mountain.jpg" alt="Exhibit 4 Image 1" style="width: 200px; height: auto;">
+                <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides4(1)">&#10095;</a>
+            </div>
             <div class="gallery-desc">
                 <h3>Golden Ink of Wayang: Madri's Loyalty & The Mountain</h3>
                 <p>This piece depicts Madri, a character from the Mahabharata whose story exemplifies unwavering loyalty and sacrifice. The mountain backdrop represents Mount Merapi, one of Java's most sacred volcanoes, creating a powerful connection between Javanese mythology and its natural landscape.</p>
             </div>
         </div>
     </div>
+
+    <!-- Updated Script Section -->
+    <script>
+        let slideIndices = {
+            'slides3': 0,
+            'slides4': 0,
+            'slides5': 0
+        };
+
+        function plusSlides(n, slideClass) {
+            showSlides(slideIndices[slideClass] += n, slideClass);
+        }
+
+        function showSlides(n, slideClass) {
+            let slides = document.getElementsByClassName(slideClass);
+            if (n >= slides.length) { slideIndices[slideClass] = 0; }
+            if (n < 0) { slideIndices[slideClass] = slides.length - 1; }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndices[slideClass]].style.display = "block";
+        }
+
+        // Initialize all sliders
+        showSlides(0, 'slides3');
+        showSlides(0, 'slides4');
+        showSlides(0, 'slides5');
+    </script>
 
     <!-- Footer -->
     <footer>
@@ -181,59 +275,11 @@
             <p>Contact Person: +62 812-6474-2579</p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/9cintatw/" target="_blank">@9cintatw</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>
         </div>
     </footer>
-
-    <script>
-        let slideIndex = 0;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let slides = document.getElementsByClassName("slides3");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-
-        function plusSlides4(n) {
-            showSlides4(slideIndex += n);
-        }
-
-        function showSlides4(n) {
-            let slides = document.getElementsByClassName("slides4");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-
-        function plusSlides5(n) {
-            showSlides5(slideIndex += n);
-        }
-
-        function showSlides5(n) {
-            let slides = document.getElementsByClassName("slides5");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-    </script>
-
 </body>
 </html>

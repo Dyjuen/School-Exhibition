@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Aceh - Exhibition</title>
+    <meta name="viewport" content="width=1024">
+    <title>The Adventure of Sulawesi - Exhibition</title>
     <link rel="stylesheet" href="B.css">
     <style>
         .title-section h1 {
@@ -12,6 +12,32 @@
             margin: 30px 0;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery-desc h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        .gallery-desc h4 {
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .gallery-desc h5 {
+            font-size: 25px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
         }
         .gallery {
             display: flex;
@@ -35,6 +61,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
         }
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
         .gallery-desc h3 {
             font-size: 30px;
             color: white;
@@ -44,21 +78,6 @@
             position: relative;
             z-index: 3;
         }
-        .item-content {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-            width: 100%;
-            padding: 0 20px;
-            position: relative;
-        }
-        .gallery-desc {
-            flex: 1;
-            padding: 30px;
-            color: white;
-            position: relative;
-            z-index: 2;
-        }
         .gallery-desc p {
             font-size: 17px;
             text-align: left;
@@ -67,13 +86,18 @@
             line-height: 1.6;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        .gallery-item-media {
+            width: 300px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+            position: relative;
+            z-index: 2;
         }
-        .content {
-            flex: 1;
+        .gallery-item-media:hover {
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
@@ -89,14 +113,20 @@
                 padding: 20px;
             }
             .item-content {
-                flex-direction: column;
-                align-items: center;
+                display: grid;
+                grid-template-columns: 1fr;
                 gap: 25px;
                 padding: 0 15px;
+            }
+            .gallery-item-media {
+                width: 250px;
+                margin: 0 auto;
             }
             .gallery-desc {
                 width: 100%;
                 padding: 25px;
+                position: relative;
+                order: unset;
             }
         }
 
@@ -112,35 +142,62 @@
             .gallery-item {
                 padding: 15px;
             }
-            .gallery-desc h3 {
-                font-size: 22px;
-            }
             .item-content {
+                display: grid;
+                grid-template-columns: 1fr;
                 gap: 20px;
                 padding: 0 10px;
             }
+            .gallery-item-media {
+                width: 180px;
+                margin: 0 auto 15px auto;
+            }
             .gallery-desc {
                 padding: 20px;
-                max-height: 200px;
+                width: 100%;
+                position: relative;
+                z-index: 1;
             }
-            .gallery-desc p {
+            .gallery-desc h4, .gallery-desc h5 {
                 font-size: 16px;
                 line-height: 1.5;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            .gallery {
+                gap: 20px;
+            }
+            .gallery-item {
+                gap: 8px;
+            }
+            .product-title {
+                font-size: 18px;
+            }
+            .gallery-desc {
+                max-height: 120px;
+                padding: 12px;
+            }
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 14px;
+            }
+            .gallery-item-media {
+                width: 120px;
             }
         }
     </style>
 </head>
 <body>
-
     <!-- Top Bar -->
     <header>
         <div class="topbar">
-            <a href="B.html" class="topbar-home">9B</a> <!-- Clickable link -->
+            <a href="B.html" class="topbar-home">9B</a>
             <div class="dropdown">
                 <span class="right">E-Catalogue</span>
                 <div class="dropdown-content">
                     <a href="The Adventure of Sulawesi2.html">The Adventure of Sulawesi</a>
-                    <a href="The Adventure of Kalimantan2.html">The Adventure of Kalimantan</a>
+                    <a href="The Adventure of Kalimantan2.html">The Adventure of Banjarmasin</a>
                     <a href="The Adventure of Papua2.html">The Adventure of Papua</a>
                     <a href="The Adventure of Java2.html">The Adventure of Java</a>
                     <a href="The Adventure of Sumatra2.html">The Adventure of Sumatra</a>
@@ -159,62 +216,54 @@
     <div class="content">
         <div class="gallery">
             <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-                <img src="assets/b2/IMG_0330.JPG" alt="Exhibit 1" style="width: 200px; height: auto;">
+                <img class="gallery-item-media" src="assets/b2/IMG_0330.JPG" alt="Exhibit 1">
                 <div class="gallery-desc">
                     <h3>Replica of "Pisang Ijo"</h3>
-                    <p>Pisang ijo ice come from Makassar (South Sulawesi). The ingredients used is bananas, marrow porridge, green dough, syrup and ice. it symbolize a harmonious balance of life. The green color used symbolizes sacredness and holiness. This food has a sweet taste so it is often used as a dessert or served in hot weather.
-                    </p>
+                    <p>Pisang ijo ice come from Makassar (South Sulawesi). The ingredients used is bananas, marrow porridge, green dough, syrup and ice. it symbolize a harmonious balance of life. The green color used symbolizes sacredness and holiness. This food has a sweet taste so it is often used as a dessert or served in hot weather.</p>
                 </div>
             </div>
+
             <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
-                <img src="assets/b2/IMG_0326.JPG" alt="Exhibit 2" style="width: 200px; height: 200px;">
+                <img class="gallery-item-media" src="assets/b2/IMG_0326.JPG" alt="Exhibit 2">
                 <div class="gallery-desc">
                     <h3>Replica of "Panada"</h3>
-                    <p>Panada comes from  Manado which is in north sulawesi. With the influence of Portuguese culture, panada is bread/cake with minced fish/meat filling. usually The fish is kipjack fish and seasoned with spices. Panada is often used as a snack food that has been passed down from generation to generation by Sulawesi residents. Panada comes from  Manado which is in north sulawesi. With the influence of Portuguese culture, panada is bread/cake with minced fish/meat filling. usually The fish is kipjack fish and seasoned with spices. Panada is often used as a snack food that has been passed down from generation to generation by Sulawesi residents
-            </div>
-            </div>
-            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-                <img src="assets/b2/IMG_0232.JPG" alt="Exhibit 3" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>MIniature of Tambi traditional house
-                    </h3>
-                    <p>Tambi traditional house is a traditional house from the Tidung island, South Sulawesi. The house is made from wood and bamboo. The house is a traditional house that has been passed down from generation to generation by the residents of Tidung island. The house is a traditional house that has been passed down from generation to generation by the residents of Tidung island. The Tambi Traditional House has the meaning of fertility and prosperity for its residents. The decoration of buffalo or cow horns at the end of the roof, called pebaula, symbolizes human sacrifice to the Creator. This house is in the form of a stilt house, because it is to avoid attacks by wild animals.
-
-                    </p>
-            </div>
-            </div>
-            <div class="gallery-item" data-title="Exhibit 6" data-description="Description of Exhibit 6">
-                <img src="assets/b2/IMG_0220.JPG" alt="Exhibit 6" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>Painting of a Phinisi Ship
-
-                    </h3>
-                    <p>The Pinisi ship is originated from South Sulawesi, and was used by the Bugis people in navigating the seas of the archipelago. These ships were often used as cargo ships in the past for trade. According to THE legend, the Pinisi Ship was first built by Sawerigading, the crown prince of the Luwu Kingdom, in the 14th century. The ship was rebuilt by the local community after breaking into three pieces due to a major storm, and has since been known as the Pinisi Ship. </p>    
+                    <p>Panada comes from Manado which is in north sulawesi. With the influence of Portuguese culture, panada is bread/cake with minced fish/meat filling. usually The fish is kipjack fish and seasoned with spices. Panada is often used as a snack food that has been passed down from generation to generation by Sulawesi residents.</p>
                 </div>
             </div>
-            <div class="gallery-item" data-title="Exhibit 6" data-description="Description of Exhibit 6">
-                <img src="assets/b2/IMG_0240.JPG" alt="Exhibit 6" style="width: 200px; height: auto;">
+
+            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+                <img class="gallery-item-media" src="assets/b2/IMG_0232.JPG" alt="Exhibit 3">
                 <div class="gallery-desc">
-                    <h3>Keychains</h3>          
-                    <p>The Anoa, which is often called the little buffalo, is also an endemic animal that is a symbol of courage and resilience. The Plum Alau Bird also has a distinctive sound that describes the beauty of Sulawesi's wild nature. In addition, we chose Begonia flowers and Fiber orchids because of their beauty that reflects the lush tropical nature of Sulawesi.Panada, which resembles pastels, shows the influence of foreign cultures in local cuisine, while Es Pisang Ijo is a fresh dish that is famous in various regions of Sulawesi. Toraja Parepo batik has a distinctive pattern and depicts Toraja culture which is rich in traditional values and traditions. In addition, Toraja batik is also a symbol of ancestral heritage that has deep philosophical value.</p>
+                    <h3>Miniature of Tambi traditional house</h3>
+                    <p>Tambi traditional house is a traditional house from the Tidung island, South Sulawesi. The house is made from wood and bamboo. The house is a traditional house that has been passed down from generation to generation by the residents of Tidung island. The Tambi Traditional House has the meaning of fertility and prosperity for its residents. The decoration of buffalo or cow horns at the end of the roof, called pebaula, symbolizes human sacrifice to the Creator. This house is in the form of a stilt house, because it is to avoid attacks by wild animals.</p>
+                </div>
             </div>
-        </div> 
-        <div class="gallery-item" data-title="Exhibit 6" data-description="Description of Exhibit 6">
-            <img src="assets/b2/IMG_0343.JPG" alt="Exhibit 6" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Badik</h3>
-                Badik is a traditional weapon originating from South Sulawesi, specificly developed by the Bugis, Makassar, and Mandar tribes. This weapon has become an integral part of the culture and identity of the people. At first, badik was used as a tool for daily activities such as farming and hunting. In addition, badik functions as a self-defense tool from threats. Over time, the badik developed into a symbol of self-esteem and courage, known as the concept of "siri'" in Bugis-Makassar culture. Owning and carrying a dagger is considered a sign of a man's honor and identity in that society. Badik has a distinctive shape, with blades that can be straight or curved, as well as a pointed tip.  The length of the bar is usually around 20-30 cm.  This design is designed to maximize effectiveness in stabbing. Badik (upstream) handle is often curved, providing more comfort and control when used.  Some badik is also decorated with prestige, which is a pattern in the blades that are believed to have aesthetic and spiritual values. Badik blades are generally made of high-quality metal such as iron or steel. The choice of material is based on the need for sharpness and strength, ensuring that the badik can function effectively as A defense and a status symbol. The handle and scabbard are usually made of wood, horn, or ivory, often decorated with carvings that reflect the owner's social status. 
 
+            <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
+                <img class="gallery-item-media" src="assets/b2/IMG_0220.JPG" alt="Exhibit 4">
+                <div class="gallery-desc">
+                    <h3>Painting of a Phinisi Ship</h3>
+                    <p>The Pinisi ship is originated from South Sulawesi, and was used by the Bugis people in navigating the seas of the archipelago. These ships were often used as cargo ships in the past for trade. According to THE legend, the Pinisi Ship was first built by Sawerigading, the crown prince of the Luwu Kingdom, in the 14th century. The ship was rebuilt by the local community after breaking into three pieces due to a major storm, and has since been known as the Pinisi Ship.</p>
+                </div>
+            </div>
 
+            <div class="gallery-item" data-title="Exhibit 5" data-description="Description of Exhibit 5">
+                <img class="gallery-item-media" src="assets/b2/IMG_0240.JPG" alt="Exhibit 5">
+                <div class="gallery-desc">
+                    <h3>Keychains</h3>
+                    <p>The Anoa, which is often called the little buffalo, is also an endemic animal that is a symbol of courage and resilience. The Plum Alau Bird also has a distinctive sound that describes the beauty of Sulawesi's wild nature. In addition, we chose Begonia flowers and Fiber orchids because of their beauty that reflects the lush tropical nature of Sulawesi. Panada, which resembles pastels, shows the influence of foreign cultures in local cuisine, while Es Pisang Ijo is a fresh dish that is famous in various regions of Sulawesi. Toraja Parepo batik has a distinctive pattern and depicts Toraja culture which is rich in traditional values and traditions. In addition, Toraja batik is also a symbol of ancestral heritage that has deep philosophical value.</p>
+                </div>
+            </div>
 
-
-
-
-
-            </div> 
+            <div class="gallery-item" data-title="Exhibit 6" data-description="Description of Exhibit 6">
+                <img class="gallery-item-media" src="assets/b2/IMG_0343.JPG" alt="Exhibit 6">
+                <div class="gallery-desc">
+                    <h3>Badik</h3>
+                    <p>Badik is a traditional weapon originating from South Sulawesi, specificly developed by the Bugis, Makassar, and Mandar tribes. This weapon has become an integral part of the culture and identity of the people. At first, badik was used as a tool for daily activities such as farming and hunting. In addition, badik functions as a self-defense tool from threats. Over time, the badik developed into a symbol of self-esteem and courage, known as the concept of "siri'" in Bugis-Makassar culture.</p>
+                </div>
+            </div>
         </div>
     </div>
-    
 
     <!-- Footer -->
     <footer>
@@ -225,7 +274,7 @@
             <p>Contact Person: +62 812-6474-2579</p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+            <p>Instagram: <a href="https://instagram.com/basstars_" target="_blank">@basstars_</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>

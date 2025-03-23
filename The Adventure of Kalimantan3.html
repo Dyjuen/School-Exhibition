@@ -2,56 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Sulawesi - Exhibition</title>
-    <link rel="stylesheet" href="A.css">
+    <meta name="viewport" content="width=1024">
+    <title>The Adventure of Kalimantan - Exhibition</title>
+    <link rel="stylesheet" href="c.css">
     <style>
-        .slider {
-            position: relative;
-            width: 200px; /* Adjust the width as needed */
-            height: auto;
-        }
-        .slides3 {
-            display: none;
-            width: 100%;
-        }
-        .slides4 {
-            display: none;
-            width: 100%;
-        }
-        .slides5 {
-            display: none;
-            width: 100%;
-        }
-        .active {
-            display: block;
-        }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            bottom: 1px; /* Changed from 0 to 1px */
-            width: auto;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
-        }
-        .prev {
-            left: 0%;
-            bottom: 100%;
-        }
-        .next {
-            left: 70%;
-            bottom: 100%;
-        }
         .title-section h1 {
             font-size: 60px;
             text-align: center;
             margin: 30px 0;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery-desc h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        .gallery-desc h4 {
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .gallery-desc h5 {
+            font-size: 25px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
         }
         .gallery {
             display: flex;
@@ -100,14 +86,113 @@
             line-height: 1.6;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
+        .gallery-item-media {
+            width: 300px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+            position: relative;
+            z-index: 2;
+        }
+        .gallery-item-media:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .title-section h1 {
+                font-size: 45px;
+                margin: 25px 0;
+            }
+            .gallery {
+                gap: 40px;
+                padding: 20px;
+            }
+            .gallery-item {
+                padding: 20px;
+            }
+            .item-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 0 15px;
+            }
+            .gallery-item-media {
+                width: 250px;
+                margin: 0 auto;
+            }
+            .gallery-desc {
+                width: 100%;
+                padding: 25px;
+                position: relative;
+                order: unset;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-section h1 {
+                font-size: 32px;
+                margin: 20px 0;
+            }
+            .gallery {
+                gap: 30px;
+                padding: 15px;
+            }
+            .gallery-item {
+                padding: 15px;
+            }
+            .item-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 10px;
+            }
+            .gallery-item-media {
+                width: 180px;
+                margin: 0 auto 15px auto;
+            }
+            .gallery-desc {
+                padding: 20px;
+                width: 100%;
+                position: relative;
+                z-index: 1;
+            }
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 16px;
+                line-height: 1.5;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            .gallery {
+                gap: 20px;
+            }
+            .gallery-item {
+                gap: 8px;
+            }
+            .product-title {
+                font-size: 18px;
+            }
+            .gallery-desc {
+                max-height: 120px;
+                padding: 12px;
+            }
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 14px;
+            }
+            .gallery-item-media {
+                width: 120px;
+            }
+        }
     </style>
 </head>
 <body>
-
     <!-- Top Bar -->
     <header>
         <div class="topbar">
-            <a href="C.html" class="topbar-home">9C</a> <!-- Clickable link -->
+            <a href="C.html" class="topbar-home">9C</a>
             <div class="dropdown">
                 <span class="right">E-Catalogue</span>
                 <div class="dropdown-content">
@@ -128,61 +213,38 @@
     </div>
 
     <!-- Gallery Section -->
-    <div class="gallery">
-        <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-            <img src="assets/c2/Kalimantan Digital Poster_ Where Nature and Culture Unite.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Kalimantan Digital Poster: Where Nature & Culture Unite</h3>
-                <p>This poster depicts the rich culture and natural beauty of Kalimantan. The poster is dominated by bright yellow, giving the impression of energy and strong appeal. In the upper right corner, there is a picture of a kuyang — a mystical creature in Kalimantan mythology, giving a touch of mystery and adding to the local cultural value. In the middle of the poster, a woman is seen in traditional Dayak clothing, dancing gracefully. The presence of this Dayak dancer depicts the richness of the arts and traditions of the indigenous tribes of Kalimantan that are still preserved to this day. The combination of traditional cultural elements and mythology makes this poster not only informative, but also triggers curiosity and interest in getting to know more about Kalimantan culture. </p>
+    <div class="content">
+        <div class="gallery">
+            <div class="gallery-item">
+                <img class="gallery-item-media" src="assets/c2/Kalimantan Digital Poster_ Where Nature and Culture Unite.jpg" alt="Exhibit 1">
+                <div class="gallery-desc">
+                    <h3>Kalimantan Digital Poster: Where Nature & Culture Unite</h3>
+                    <p>This poster depicts the rich culture and natural beauty of Kalimantan. The poster is dominated by bright yellow, giving the impression of energy and strong appeal. In the upper right corner, there is a picture of a kuyang — a mystical creature in Kalimantan mythology, giving a touch of mystery and adding to the local cultural value. In the middle of the poster, a woman is seen in traditional Dayak clothing, dancing gracefully. The presence of this Dayak dancer depicts the richness of the arts and traditions of the indigenous tribes of Kalimantan that are still preserved to this day. The combination of traditional cultural elements and mythology makes this poster not only informative, but also triggers curiosity and interest in getting to know more about Kalimantan culture.</p>
+                </div>
             </div>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
-            <img src="assets/c2/Mandau_ The Iconic Blade of Kalimantan.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Mandau: The Iconic Blade of Kalimantan</h3>
-                <p> Mandau is a traditional weapon of the Dayak tribe in Kalimantan known as a symbol of courage, strength, and honor. Made of iron that is forged with great precision, Mandau is often decorated with fine carvings and is usually decorated with bird feathers or human hair on the handle, which adds to its aesthetic value and spiritual meaning. </p>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-            <div class="slider">
-                <img class="slides3 active" src="assets/c3/The White Gold of Papua_ Papuan White Shell.jpg" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/c3/The White Gold of Papua_ Papuan White Shell 2.jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/c3/The White Gold of Papua_ Papuan White Shell 3.jpg" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <div class="gallery-desc">
-                <h3>The White Gold of Papua: Papuan White Shell</h3>
-                <p>This t-shirt carries a typical Sulawesi cultural design with an illustration of a traditional Tongkonan house on the back, symbolizing the identity and philosophy of life of the Torajan people. The ethnic motifs surrounding it add to the traditional impression. On the front, there is writing in the Torajan language, "Tettongko' Ma'toto', Lamunan Sangkutu' Tau", which means "Stand strong, because life is full of challenges." This t-shirt is not just clothing, but also a symbol of respect for cultural heritage and the spread of inspiring messages from local wisdom.</p>
-            </div>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
-            <div class="slider">
-                <img class="slides4 active" src="assets/c2/Borneo Chic_ Traditional Meets Modern.jpg" alt="Exhibit 4 Image 1" style="width: 200px; height: auto;">
-                <img class="slides4" src="assets/c2/Borneo Chic_ Traditional Meets Modern (3).jpg" alt="Exhibit 4 Image 2" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides4(1)">&#10095;</a>
-            </div>
-            <div class="gallery-desc">
-                <h3>Borneo Chic: Traditional Meets Modern</h3>
-                <p>This t-shirt features a design inspired by the rich culture of Kalimantan, especially the distinctive Dayak carving art. The black base color gives an elegant and mysterious impression, while the ethnic motif with geometric patterns reflects the strength and natural beauty of Kalimantan.
 
-                    On the front, there is a skull symbol with a head decoration of hornbill feathers — a symbol of courage and high status in Dayak culture. On the back, a larger skull image with distinctive ornamental details provides a strong and unique aesthetic touch. The words "Kalimantan Borneo" emphasize the cultural identity of this island as one of the centers of tradition and art in the archipelago.</p>
+            <div class="gallery-item">
+                <img class="gallery-item-media" src="assets/c2/Mandau_ The Iconic Blade of Kalimantan.jpg" alt="Exhibit 2">
+                <div class="gallery-desc">
+                    <h3>Mandau: The Iconic Blade of Kalimantan</h3>
+                    <p>Mandau is a traditional weapon of the Dayak tribe in Kalimantan known as a symbol of courage, strength, and honor. Made of iron that is forged with great precision, Mandau is often decorated with fine carvings and is usually decorated with bird feathers or human hair on the handle, which adds to its aesthetic value and spiritual meaning.</p>
+                </div>
             </div>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 5" data-description="Description of Exhibit 5">
-            <img src="assets/c2/Talawang_ The Traditional Shield of the Dayak Warriors.jpg" alt="Exhibit 5" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Talawang: The Traditional Shield of Dayak Warriors</h3>
-                <p>Talawang is a traditional shield of the Dayak tribe in Kalimantan that is full of meaning and a symbol of strength. Made of hard ironwood and decorated with distinctive carvings, Talawang not only functions as a protector in war, but also as a symbol of courage and cultural identity of the Dayak people.
 
-                    The motifs carved on Talawang depict the harmonious relationship between humans, nature, and ancestral spirits. Every detail has a deep meaning, from strength, protection, to prosperity. In the Dayak tradition, Talawang is often used in war dances or traditional ceremonies as a symbol of pride and courage.</p>
+            <div class="gallery-item">
+                <img class="gallery-item-media" src="assets/c2/Talawang_ The Traditional Shield of the Dayak Warriors.jpg" alt="Exhibit 5">
+                <div class="gallery-desc">
+                    <h3>Talawang: The Traditional Shield of Dayak Warriors</h3>
+                    <p>Talawang is a traditional shield of the Dayak tribe in Kalimantan that is full of meaning and a symbol of strength. Made of hard ironwood and decorated with distinctive carvings, Talawang not only functions as a protector in war, but also as a symbol of courage and cultural identity of the Dayak people. The motifs carved on Talawang depict the harmonious relationship between humans, nature, and ancestral spirits. Every detail has a deep meaning, from strength, protection, to prosperity. In the Dayak tradition, Talawang is often used in war dances or traditional ceremonies as a symbol of pride and courage.</p>
+                </div>
             </div>
-        </div>
-        <div class="gallery-item" data-title="Exhibit 6" data-description="Description of Exhibit 6">
-            <img src="assets/c2/The Charm of Kalimantan.jpg" alt="Exhibit 6" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>The Charm of Kalimantan</h3>
-                <p>This poster depicts the rich culture and natural beauty of Kalimantan. The poster is dominated by bright yellow, giving the impression of energy and strong appeal. In the upper right corner, there is a picture of a kuyang — a mystical creature in Kalimantan mythology, giving a touch of mystery and adding to the local cultural value. In the middle of the poster, a woman is seen in traditional Dayak clothing, dancing gracefully. The presence of this Dayak dancer depicts the richness of the arts and traditions of the indigenous tribes of Kalimantan that are still preserved to this day. The combination of traditional cultural elements and mythology makes this poster not only informative, but also triggers curiosity and interest in getting to know more about Kalimantan culture..</p>
+
+            <div class="gallery-item">
+                <img class="gallery-item-media" src="assets/c2/The Charm of Kalimantan.jpg" alt="Exhibit 6">
+                <div class="gallery-desc">
+                    <h3>The Charm of Kalimantan</h3>
+                    <p>This poster depicts the rich culture and natural beauty of Kalimantan. The poster is dominated by bright yellow, giving the impression of energy and strong appeal. In the upper right corner, there is a picture of a kuyang — a mystical creature in Kalimantan mythology, giving a touch of mystery and adding to the local cultural value. In the middle of the poster, a woman is seen in traditional Dayak clothing, dancing gracefully. The presence of this Dayak dancer depicts the richness of the arts and traditions of the indigenous tribes of Kalimantan that are still preserved to this day. The combination of traditional cultural elements and mythology makes this poster not only informative, but also triggers curiosity and interest in getting to know more about Kalimantan culture.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -196,59 +258,11 @@
             <p>Contact Person: +62 812-6474-2579</p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+            <p>Instagram: <a href="https://instagram.com/9cintatw" target="_blank">@9cintatw</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>
         </div>
     </footer>
-
-    <script>
-        let slideIndex = 0;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let slides = document.getElementsByClassName("slides3");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-
-        function plusSlides4(n) {
-            showSlides4(slideIndex += n);
-        }
-
-        function showSlides4(n) {
-            let slides = document.getElementsByClassName("slides4");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-
-        function plusSlides5(n) {
-            showSlides5(slideIndex += n);
-        }
-
-        function showSlides5(n) {
-            let slides = document.getElementsByClassName("slides5");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-    </script>
-
 </body>
 </html>

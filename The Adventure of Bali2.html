@@ -2,49 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Bali - Exhibition</title>
+    <meta name="viewport" content="width=1024">
+    <title>The Adventure of Aceh - Exhibition</title>
     <link rel="stylesheet" href="B.css">
     <style>
-        .slider {
-            position: relative;
-            width: 200px;
-            height: auto;
-            margin: 0 auto;
-        }
-        .slides3 {
-            display: none;
-            width: 100%;
-        }
-        .active {
-            display: block;
-        }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            bottom: 1px;
-            width: auto;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
-        }
-        .prev {
-            left: 0%;
-            bottom: 100%;
-        }
-        .next {
-            left: 70%;
-            bottom: 100%;
-        }
         .title-section h1 {
             font-size: 60px;
             text-align: center;
             margin: 30px 0;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery-desc h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        .gallery-desc h4 {
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .gallery-desc h5 {
+            font-size: 25px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
         }
         .gallery {
             display: flex;
@@ -68,7 +61,15 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
         }
-        .product-title {
+        .gallery-desc {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        .gallery-desc h3 {
             font-size: 30px;
             color: white;
             text-align: center;
@@ -76,21 +77,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 3;
-        }
-        .item-content {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-            width: 100%;
-            padding: 0 20px;
-            position: relative;
-        }
-        .gallery-desc {
-            flex: 1;
-            padding: 30px;
-            color: white;
-            position: relative;
-            z-index: 2;
         }
         .gallery-desc p {
             font-size: 17px;
@@ -105,10 +91,10 @@
             height: auto;
             object-fit: contain;
             border-radius: 12px;
-            position: relative;
-            z-index: 1;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s ease;
+            position: relative;
+            z-index: 2;
         }
         .gallery-item-media:hover {
             transform: scale(1.05);
@@ -127,17 +113,20 @@
                 padding: 20px;
             }
             .item-content {
-                flex-direction: column;
-                align-items: center;
+                display: grid;
+                grid-template-columns: 1fr;
                 gap: 25px;
                 padding: 0 15px;
             }
             .gallery-item-media {
                 width: 250px;
+                margin: 0 auto;
             }
             .gallery-desc {
                 width: 100%;
                 padding: 25px;
+                position: relative;
+                order: unset;
             }
         }
 
@@ -153,23 +142,48 @@
             .gallery-item {
                 padding: 15px;
             }
-            .product-title {
-                font-size: 22px;
-            }
             .item-content {
+                display: grid;
+                grid-template-columns: 1fr;
                 gap: 20px;
                 padding: 0 10px;
             }
-            .gallery-desc {
-                padding: 20px;
-                max-height: 200px;
-            }
-            .gallery-desc p {
-                font-size: 16px;
-                line-height: 1.5;
-            }
             .gallery-item-media {
                 width: 180px;
+                margin: 0 auto 15px auto;
+            }
+            .gallery-desc {
+                padding: 20px;
+                width: 100%;
+                position: relative;
+                z-index: 1;
+            }
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 16px;
+                line-height: 1.5;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            .gallery {
+                gap: 20px;
+            }
+            .gallery-item {
+                gap: 8px;
+            }
+            .product-title {
+                font-size: 18px;
+            }
+            .gallery-desc {
+                max-height: 120px;
+                padding: 12px;
+            }
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 14px;
+            }
+            .gallery-item-media {
+                width: 120px;
             }
         }
     </style>
@@ -188,7 +202,7 @@
                     <a href="The Adventure of Papua2.html">The Adventure of Papua</a>
                     <a href="The Adventure of Java2.html">The Adventure of Java</a>
                     <a href="The Adventure of Sumatra2.html">The Adventure of Sumatra</a>
-                    <a href="The Adventure of Bali2.html">The Adventure of Bali</a>
+                    <a href="The Adventure of Bali2.html">The Adventure of NTB</a>
                 </div>
             </div>
         </div>
@@ -202,39 +216,26 @@
     <!-- Gallery Section -->
     <div class="content">
         <div class="gallery">
-            <div class="gallery-item">
-                <h3 class="product-title">Pore</h3>
-                <div class="item-content">
-                    <div class="gallery-item-media">
-                        <img src="assets/b5/IMG_0291.JPG" alt="Exhibit 1" style="width: 200px; height: auto;">
-                    </div>
-                    <div class="gallery-desc">
-                        <p>A symbol of Bali, this location also serves as a sacred site for Hindus to engage in prayer. Every visitor who arrives to offer their prayers is granted the hope of "abhipraya nawasena," which represents the desire for a brighter future.</p>
-                    </div>
+            <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
+                <img src="assets/b5/IMG_0291.JPG" alt="Exhibit 1" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Pore: Shrine of Divine</h3>
+                    <p>A symbol of Bali, this location also serves as a sacred site for Hindus to engage in prayer. Every visitor who arrives to offer their prayers is granted the hope of "abhipraya nawasena," which represents the desire for a brighter future.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <h3 class="product-title">Gelang Bunga</h3>
-                <div class="item-content">
-                    <div class="gallery-item-media">
-                        <img src="assets/b5/IMG_0301.JPG" alt="Exhibit 2" style="width: 200px; height: auto;">
-                    </div>
-                    <div class="gallery-desc">
-                        <p>Bali bracelets are very popular, one example is beaded flower bracelets.
-
-                            Flowers are well-known in Bali, especially frangipani flowers, which are often used in religious ceremonies and as decorations in temples. </p>      
-                    </div>
+            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
+                <img src="assets/b5/IMG_0309.JPG" alt="Exhibit 2" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Island of Thousand Temples: Divine Creations</h3>
+                    <p>Bali, known as the "Island of the Gods," is a beautiful Indonesian destination famous for its vibrant culture and stunning landscapes. It boasts terraced rice fields, ancient temples, and warm hospitality, appealing to travelers seeking both relaxation and adventure. With a rich mix of Hindu traditions, art, and music, Bali offers unique experiences like traditional dance, surfing, jungle exploration, and spa retreats, captivating visitors with its beauty and spiritual ambiance.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <h3 class="product-title">Island of Thousand Temples</h3>
-                <div class="item-content">
-                    <div class="gallery-item-media">
-                        <img src="assets/b5/IMG_0309.JPG" alt="Exhibit 3" style="width: 200px; height: auto;">
-                    </div>
-                    <div class="gallery-desc">
-                        <p>Bali, known as the "Island of the Gods," is a beautiful Indonesian destination famous for its vibrant culture and stunning landscapes. It boasts terraced rice fields, ancient temples, and warm hospitality, appealing to travelers seeking both relaxation and adventure. With a rich mix of Hindu traditions, art, and music, Bali offers unique experiences like traditional dance, surfing, jungle exploration, and spa retreats, captivating visitors with its beauty and spiritual ambiance.</p>
-                    </div>
+            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+                <img src="assets/b5/IMG_0301.JPG" alt="Exhibit 3" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Gelang Bunga</h3>
+                    <p>TBalinese bracelets are very popular, for example, beaded flower bracelets.
+                        Flowers are very well-known in Bali, especially frangipani flowers.</p>
                 </div>
             </div>
         </div>
@@ -249,7 +250,7 @@
             <p>Contact Person: +62 812-6474-2579</p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+            <p>Instagram: <a href="https://instagram.com/basstars_" target="_blank">@angkasa.mydjhs</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>

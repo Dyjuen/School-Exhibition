@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Aceh - Exhibition</title>
+    <meta name="viewport" content="width=1024">
+    <title>The Adventure of Sulawesi - Exhibition</title>
     <link rel="stylesheet" href="C.css">
     <style>
         .title-section h1 {
@@ -12,6 +12,32 @@
             margin: 30px 0;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery-desc h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        .gallery-desc h4 {
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .gallery-desc h5 {
+            font-size: 25px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
         }
         .gallery {
             display: flex;
@@ -60,6 +86,106 @@
             line-height: 1.6;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
+        .gallery-item-media {
+            width: 300px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+            position: relative;
+            z-index: 2;
+        }
+        .gallery-item-media:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .title-section h1 {
+                font-size: 45px;
+                margin: 25px 0;
+            }
+            .gallery {
+                gap: 40px;
+                padding: 20px;
+            }
+            .gallery-item {
+                padding: 20px;
+            }
+            .item-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 0 15px;
+            }
+            .gallery-item-media {
+                width: 250px;
+                margin: 0 auto;
+            }
+            .gallery-desc {
+                width: 100%;
+                padding: 25px;
+                position: relative;
+                order: unset;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-section h1 {
+                font-size: 32px;
+                margin: 20px 0;
+            }
+            .gallery {
+                gap: 30px;
+                padding: 15px;
+            }
+            .gallery-item {
+                padding: 15px;
+            }
+            .item-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 10px;
+            }
+            .gallery-item-media {
+                width: 180px;
+                margin: 0 auto 15px auto;
+            }
+            .gallery-desc {
+                padding: 20px;
+                width: 100%;
+                position: relative;
+                z-index: 1;
+            }
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 16px;
+                line-height: 1.5;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) and (orientation: landscape) {
+            .gallery {
+                gap: 20px;
+            }
+            .gallery-item {
+                gap: 8px;
+            }
+            .product-title {
+                font-size: 18px;
+            }
+            .gallery-desc {
+                max-height: 120px;
+                padding: 12px;
+            }
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 14px;
+            }
+            .gallery-item-media {
+                width: 120px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -76,8 +202,7 @@
                     <a href="The Adventure of Papua3.html">The Adventure of Papua</a>
                     <a href="The Adventure of Java3.html">The Adventure of Java</a>
                     <a href="The Adventure of Sumatra3.html">The Adventure of Sumatra</a>
-                    <a href="The Adventure of Bali3.html">The Adventure of Bali</a>
-                </div>
+                    <a href="The Adventure of Bali3.html">The Adventure of NTB</a>
             </div>
         </div>
     </header>
@@ -139,7 +264,7 @@
             <p>Contact Person: +62 812-6474-2579</p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+            <p>Instagram: <a href="https://instagram.com/9cintatw" target="_blank">@9cintatw</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>

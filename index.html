@@ -7,13 +7,144 @@
     <link rel="stylesheet" href="cok.css">
     <style>
         .video-container {
-            text-align: match-parent;
-            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            width: 100%;
         }
         #exhibitionVideo {
             width: 1000px;
             height: auto;
             opacity: 0.9; /* Added opacity for transparency */
+            max-width: 100%; /* Makes video responsive */
+        }
+
+        /* Add header styles to match A.html */
+        header h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        header h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+        
+        header h3 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        /* Add responsive footer styles */
+        @media (max-width: 768px) {
+            footer {
+                padding: 10px 5px;
+            }
+            .footer-column {
+                padding: 5px;
+            }
+            .footer-column p {
+                font-size: 12px;
+                margin: 3px 0;
+            }
+            .footer-column a {
+                font-size: 12px;
+            }
+            header h1 {
+                font-size: 45px;
+            }
+            header h2 {
+                font-size: 35px;
+            }
+            header h3 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                padding: 8px 3px;
+            }
+            .footer-column {
+                padding: 3px;
+            }
+            .footer-column p {
+                font-size: 10px;
+                margin: 2px 0;
+            }
+            .footer-column a {
+                font-size: 10px;
+            }
+            header h1 {
+                font-size: 35px;
+            }
+            header h2 {
+                font-size: 28px;
+            }
+            header h3 {
+                font-size: 22px;
+            }
+            
+            header p {
+                font-size: 17px;
+                line-height: 1.4;
+                margin: 6px 0;
+            }
+            
+            .gallery-desc p {
+                font-size: 17px;
+                line-height: 1.4;
+            }
+            
+            .modal-text p {
+                font-size: 17px;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 320px) {
+            p {
+                font-size: 16px;
+                line-height: 1.3;
+                margin: 6px 0;
+            }
+            
+            header p {
+                font-size: 16px;
+                line-height: 1.3;
+            }
+            
+            .gallery-desc p {
+                font-size: 16px;
+                line-height: 1.3;
+            }
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('assets/WONDERFUL OF.png');
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+                background-position: center top;
+                background-attachment: fixed;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-size: cover;
+                background-position: center top;
+                background-attachment: fixed;
+            }
         }
     </style>
 </head>
@@ -55,53 +186,73 @@
         <div class="gallery-item" data-title="Paper Mache Mask" data-description="These masks are from the island of Papua, Indonesia. These types of masks have a very important role in their culture. They can be used in rituals and traditional ceremonies. In their rituals and ceremonies, these masks serve as a form of communication with the gods. A lot of the masks are also replicas of the gods' faces so that the god is truly never forgotten.">
             <img src="assets/k3/topengmerah.png" alt="Exhibit 3" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="Name 4" data-description="Description of Exhibit 4">
+        <div class="gallery-item" data-title="The Javanese Moon Orchid" data-description="The art piece was nicknamed 'Javanese Moon Orchid' because it draws inspiration from the rich cultural and natural heritage of Java, Indonesia. The moon orchid is one of Indonesia's national flowers, symbolizing elegance, resilience, and the country's biodiversity, delicate flowers are knitted from fine strings, their stems formed with wire wrapped in green tape for strength and realism. The leaves, similarly crafted, are arranged in a pot, creating a harmonious blend of natural elegance and human ingenuity. Each stitch and detail reflects a fusion of tradition and modern creativity.
+
+        ">
             <img src="assets/k4/crochet.jpg" alt="Exhibit 4" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="The Extinct Animal" data-description="Description of Exhibit 5">
-            <img src="assets/k5/rubah.png" alt="Exhibit 5" width="500" height="500"> 
+        <div class="gallery-item" data-title="Phone Charm: The Fabled Managerie
+        " data-description="The Sumatran rhinoceros (Dicerorhinus sumatrensis) is the smallest and most primitive of all rhino species, distinguished by its body hair. The ajak (Cuon alpinus), a wild forest dog native to South, East, and Southeast Asia, including Sumatra and Java, inhabits mountainous and forested areas and is distinct from wolves. The Sumatran elephant (Elephas maximus sumatranus), a critically endangered subspecies of the Asian elephant, is native to Sumatra and faces the threat of extinction.
+
+        ">
+            <img src="assets/k5/rubahgantung.png" alt="Exhibit 5" width="500" height="500"> 
         </div>
         <div class="gallery-item" data-title="Name 6" data-description="Description of Exhibit 6">
             <img src="assets/k6/gelang.jpg" alt="Exhibit 6" width="500" height="500">
         </div>
 
         <div class="featured-row-header">Class B</div>
-        <div class="gallery-item" data-title="Name 4" data-description="Description of Exhibit 4">
-            <img src="assets/k4/crochet.jpg" alt="Exhibit 4" width="500" height="500">
-        </div> 
-        <div class="gallery-item" data-title="The Extinct Animal" data-description="Description of Exhibit 5">
-            <img src="assets/k5/rubah.png" alt="Exhibit 5" width="500" height="500"> 
+        <div class="gallery-item" data-title="Interactive Book" data-description="An interactive book filled with steps of how to cook rendang, also filled with various illustration.
+        ">
+            <img src="assets/b1/IMG_0260.JPG" alt="Exhibit 1" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="Name 6" data-description="Description of Exhibit 6">
-            <img src="assets/k6/gelang.jpg" alt="Exhibit 6" width="500" height="500">
+        <div class="gallery-item" data-title="Painting of a Phinisi Ship" data-description="The Pinisi ship is originated from South Sulawesi, and was used by the Bugis people in navigating the seas of the archipelago. These ships were often used as cargo ships in the past for trade. According to THE legend, the Pinisi Ship was first built by Sawerigading, the crown prince of the Luwu Kingdom, in the 14th century. The ship was rebuilt by the local community after breaking into three pieces due to a major storm, and has since been known as the Pinisi Ship.
+        ">
+            <img src="assets/b2/IMG_0220.JPG" alt="Exhibit 2" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="Name 6" data-description="Description of Exhibit 6">
-            <img src="assets/k6/gelang.jpg" alt="Exhibit 6" width="500" height="500">
+        <div class="gallery-item" data-title="Batik String Art" data-description="This string art is made with a distinctive batik motif concept. The motifs used are inspired by traditional batik patterns, which have deep cultural and philosophical values. Batik is an Indonesian cultural heritage that is rich in meaning. With the string art technique, batik motifs can be visualized in a more modern and unique form.
+        ">
+            <img src="assets/b3/IMG_0385.JPG" alt="Exhibit 3" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="Name 4" data-description="Description of Exhibit 4">
-            <img src="assets/k4/crochet.jpg" alt="Exhibit 4" width="500" height="500">
+        <div class="gallery-item" data-title="Jaya Wijaya Mountain" data-description="Mount Jaya Wijaya, also known as Puncak Jaya, is the highest mountain in Indonesia, standing at 4,884 meters (16,024 feet) above sea level. It is located in the Papua province and is part of the Sudirman Range in the western half of New Guinea Island. This mountain is unique because it is one of the few places in the tropical region that has permanent glaciers, although they have been shrinking due to climate change. Mount Jaya Wijaya is also notable for its rugged terrain, steep cliffs, and limestone formations. It is a popular destination for climbers and adventurers due to its challenging routes and breathtaking landscapes. The mountain was first summited by an expedition led by Heinrich Harrer in 1962. It is also significant in terms of geology, as it was once part of an ancient seabed that was uplifted millions of years ago, making it rich in marine fossils.">
+            <img src="assets/b4/IMG_0246.JPG" alt="Exhibit 4" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="The Extinct Animal" data-description="Description of Exhibit 5">
-            <img src="assets/k5/rubah.png" alt="Exhibit 5" width="500" height="500"> 
+    <div class="gallery-item" data-title="Pore: Shrine of Divine" data-description="A symbol of Bali, this location also serves as a sacred site for Hindus to engage in prayer. Every visitor who arrives to offer their prayers is granted the hope of 'abhipraya nawasena', which represents the desire for a brighter future.
+    ">
+            <img src="assets/b5/IMG_0291.JPG" alt="Exhibit 5" width="500" height="500">
+        </div>
+        <div class="gallery-item" data-title="'The House of Noble' in Kalimantan" data-description="'The House of the Nobles' in Banjarmasin is a 'Bubungan Tinggi' house which is a traditional house from South Kalimantan. As the name implies, this house is higher than the usual houses, because the area around the house is filled with swamps and rivers and also this house was a house for the nobles in the past. In the yard of the house, there is a typical South Kalimantan game, namely 'Balogo' which is usually played by children to adults in South Kalimantan.
+        ">
+            <img src="assets/b6/IMG_0254.JPG" alt="Exhibit 6" width="500" height="500">
         </div>
 
         <div class="featured-row-header">Class C</div>
-        <div class="gallery-item" data-title="Tongkrongan: House of the Brave" data-description="Description of Exhibit 6">
+        <div class="gallery-item" data-title="Tongkrongan: House of the Brave" data-description="This tote bag features a design that tells the story of the various natural beauties of Kalimantan, from mountains and vast green forests to diverse flora and fauna, as well as the rich cultural heritage that has been passed down through generations and still exists today.
+
+        ">
             <img src="assets/c1/TONGKONAN _ HOUSE OF THE BRAVE.jpg" alt="Exhibit 6" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="Talawang: The Traditional Shield of Dayak Warriors" data-description="Description of Exhibit 6">
+        <div class="gallery-item" data-title="Talawang: The Traditional Shield of Dayak Warriors" data-description="Talawang is a traditional shield of the Dayak tribe in Kalimantan that is full of meaning and a symbol of strength. Made of hard ironwood and decorated with distinctive carvings, Talawang not only functions as a protector in war, but also as a symbol of courage and cultural identity of the Dayak people. The motifs carved on Talawang depict the harmonious relationship between humans, nature, and ancestral spirits. Every detail has a deep meaning, from strength, protection, to prosperity. In the Dayak tradition, Talawang is often used in war dances or traditional ceremonies as a symbol of pride and courage.
+
+        ">
             <img src="assets/c2/Talawang_ The Traditional Shield of the Dayak Warriors.jpg" alt="Exhibit 6" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="The Hope From Papua: Papuan Dream Catcher" data-description="Description of Exhibit 4">
+        <div class="gallery-item" data-title="The Hope From Papua: Papuan Dream Catcher" data-description="A typical Papuan dreamcatcher is made from rattan or bamboo with a woven sago or pandan fiber net. Decorated with Cenderawasih bird feathers, shell beads, and Asmat or Dani tribal motif carvings, this dreamcatcher symbolizes protection, good luck, and a spiritual connection with nature and ancestors. In addition to functioning as a filter for bad dreams, its beauty also makes it a valuable work of art.
+
+        ">
             <img src="assets/c3/The Hope From Papua_ Papuan Dream Catcher.jpg" alt="Exhibit 4" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="Golden Ink of Wayang: Gatotkaca's Might" data-description="Description of Exhibit 5">
+        <div class="gallery-item" data-title="Golden Ink of Wayang: Gatotkaca's Might" data-description="Gatotkaca is one of the most powerful and beloved characters in Javanese wayang (shadow puppet) tradition. Known for his extraordinary strength and ability to fly, he represents courage, loyalty, and protection. This artwork celebrates his legendary might through traditional Javanese artistic elements combined with modern design techniques.
+
+        ">
             <img src="assets/c4/IMG_3253.jpg" alt="Exhibit 5" width="500" height="500"> 
         </div>
         <div class="gallery-item" data-title="Name 6" data-description="Description of Exhibit 6">
             <img src="assets/k6/gelang.jpg" alt="Exhibit 6" width="500" height="500">
         </div>
-        <div class="gallery-item" data-title="The Heart of Toba" data-description="Description of Exhibit 6">
+        <div class="gallery-item" data-title="The Heart of Toba" data-description="A painting featuring the iconic view of Sumatra Island, namely Lake Toba and Samosir Island.
+
+        ">
             <img src="assets/c6/The Heart of Toba.jpg" alt="Exhibit 6" width="500" height="500">
         </div>
     </div>

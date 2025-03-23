@@ -5,6 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Exhibition</title>
     <link rel="stylesheet" href="B.css">
+    <style>
+        /* Add header styles to match A.html */
+        header h1 {
+            font-size: 60px;
+            text-align: center;
+            margin: 30px 0;
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        header h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+            color: black;
+        }
+        
+        header h3 {
+            font-size: 35px;
+            margin-bottom: 15px;
+            color: black;
+        }
+
+        /* Regular paragraph text */
+        p {
+            font-size: 24px !important;  /* Force larger font size */
+            line-height: 1.6;
+            margin: 15px 0;
+            color: black !important;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('assets/WONDERFUL OF.png');
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+                background-position: center top;
+                background-attachment: fixed;
+            }
+            header h1 {
+                font-size: 45px;
+            }
+            header h2 {
+                font-size: 35px;
+            }
+            header h3 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 20px;
+                line-height: 1.5;
+                margin: 10px 0;
+            }
+            
+            header p {
+                font-size: 17px;
+                line-height: 1.4;
+                margin: 6px 0;
+            }
+            
+            .gallery-desc p {
+                font-size: 17px;
+                line-height: 1.4;
+            }
+            
+            .modal-text p {
+                font-size: 17px;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-size: cover;
+                background-position: center top;
+                background-attachment: fixed;
+            }
+            header h1 {
+                font-size: 35px;
+            }
+            header h2 {
+                font-size: 28px;
+            }
+            header h3 {
+                font-size: 22px;
+            }
+            p {
+                font-size: 18px;
+                line-height: 1.4;
+                margin: 8px 0;
+            }
+            
+            header p {
+                font-size: 17px;
+                line-height: 1.4;
+                margin: 6px 0;
+            }
+            
+            .gallery-desc p {
+                font-size: 17px;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 320px) {
+            p {
+                font-size: 16px;
+                line-height: 1.3;
+                margin: 6px 0;
+            }
+            
+            header p {
+                font-size: 16px;
+                line-height: 1.3;
+            }
+            
+            .gallery-desc p {
+                font-size: 16px;
+                line-height: 1.3;
+            }
+        }
+
+        /* Remove ALL existing footer styles and replace with these exact styles from cok.css */
+        footer {
+            background: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .footer-column p {
+            font-size: 14px !important;
+            margin: 5px 0;
+            color: white !important;
+        }
+
+        .footer-column a {
+            font-size: 14px !important;
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-column {
+                width: 100%;
+                padding: 5px 0;
+            }
+
+            body {
+                font-size: 0.9em;
+            }
+            
+            .topbar {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+
+            .footer-column p, .footer-column a {
+                font-size: 10px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -15,7 +199,7 @@
                 <span class="right">E-Catalogue</span>
                 <div class="dropdown-content">
                     <a href="The Adventure of Sulawesi2.html">The Adventure of Sulawesi</a>
-                    <a href="The Adventure of Kalimantan2.html">The Adventure of Kalimantan</a>
+                    <a href="The Adventure of Kalimantan2.html">The Adventure of Banjarmasin</a>
                     <a href="The Adventure of Papua2.html">The Adventure of Papua</a>
                     <a href="The Adventure of Java2.html">The Adventure of Java</a>
                     <a href="The Adventure of Sumatra2.html">The Adventure of Sumatra</a>
@@ -27,12 +211,12 @@
        <h2>"Adventures of Indonesia"</h2>
         <p>Welcome to the fine arts exhibition presented by Class 9B with the theme "Adventure of Indonesia". This exhibition is the result of our students' hard work and creativity which aims to explore the beauty and diversity of Indonesian culture.
         </p>
-        <p>“Adventure of Indonesia” invites visitors to explore various aspects of Indonesian life, from natural riches to unique traditions. Through works of art, we want to convey a message about the importance of preserving culture and the environment.
+        <p>"Adventure of Indonesia" invites visitors to explore various aspects of Indonesian life, from natural riches to unique traditions. Through works of art, we want to convey a message about the importance of preserving culture and the environment.
         </p>
         <p>This exhibition displays various works of art from Class 9B students. Each work is a personal expression that describes our experiences and views about Indonesia.
         </p>
         <p>We hope that this exhibition can provide inspiration and knowledge to visitors about the beauty and diversity of Indonesia.</p>
-        <p>Thank you for visiting and supporting our work!</p>
+        <p>Thank you for visiting and supporting our work!</p>
     </header>
     <div class="featured">
         <div class="gallery-item" data-title="Acrylic Painting of the Latimojong Mountain" data-description="An adventure to enter deep into the tropical forest of Sulawesi, where various flora grow and have been living, like endemic plants and exotic trees. With green strokes into light and dark, there is a three-dimensional effect as if inviting the audience on a journey into the wild nature of Sulawesi. The details, like branches and shadows, can symbolize the balance of the ecosystem.
@@ -73,7 +257,7 @@
             <p>Contact Person: +62 812-6474-2579 </p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://www.instagram.com/basstars_/" target="_blank">@basstars_</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/basstars_" target="_blank">@basstars_</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>

@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
     <title>The Adventure of Papua - Exhibition</title>
     <link rel="stylesheet" href="A.css">
     <style>
         .slider {
             position: relative;
-            width: 200px; /* Adjust the width as needed */
-            height: auto;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .slides3 {
+        .slides3, .slides4, .slides5 {
             display: none;
-            width: 100%;
-        }
-        .slides4 {
-            display: none;
-            width: 100%;
-        }
-        .slides5 {
-            display: none;
-            width: 100%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .active {
             display: block;
@@ -29,22 +29,29 @@
         .prev, .next {
             cursor: pointer;
             position: absolute;
-            bottom: 1px; /* Changed from 0 to 1px */
-            width: auto;
-            padding: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            z-index: 3;
+            transition: 0.3s ease;
         }
         .prev {
-            left: 0%;
-            bottom: 100%;
+            left: -50px;
         }
         .next {
-            left: 70%;
-            bottom: 100%;
+            right: -50px;
+        }
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
         }
         .title-section h1 {
             font-size: 60px;
@@ -132,35 +139,36 @@
 
     <!-- Gallery Section -->
     <div class="gallery">
-        <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-            <img src="assets/c3/The Bag of Culture_ Noken.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
+        <div class="gallery-item">
+            <img src="assets/k3/assdaasds.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
             <div class="gallery-desc">
-                <h3>Scrapbook</h3>
-                <p>The scrapbook with brown material and various articles or pictures in it contains various kinds of things in Papua. By reading the contents of this scrapbook you will know various kinds of in-depth information about various variations in Papuan culture.</p>
+                <h3>Scrapbook 
+                </h3>
+                <p>TThe scrapbook with brown material and various articles or pictures in it contains various kinds of things in Papua. By reading the contents of this scrapbook you will know various kinds of in-depth information about various variations in Papuan culture.</p>
             </div>
         </div>
-        <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+        <div class="gallery-item">
             <div class="slider">
-                <img class="slides3 active" src="assets/k3/patungtopi.png" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/k3/patunghitam.png" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <img class="slides3 active" src="assets/k3/patunghitam.png" alt="Exhibit 3 Image 1">
+                <img class="slides3" src="assets/k3/patungtopi.png" alt="Exhibit 3 Image 2">
+                <a class="prev" onclick="plusSlides(-1, 'slides3')">❮</a>
+                <a class="next" onclick="plusSlides(1, 'slides3')">❯</a>
             </div>
             <div class="gallery-desc">
-                <h3>Sculpture</h3>
-                <p>This sculpture depicts a Papuan man sitting cross-legged in a meditative pose. With a jet-black body, he has white and red streaks adorning his body. The dominant red color symbolizes courage, spirit, and strength. The red headdress resembles feathers, adding to his majestic appearance. This sculpture is not only a beautiful display, but also a representation of Papua's rich and meaningful culture.</p>
+                <h3>Patung</h3>
+                <p>This sculpture depicts a Papuan man sitting cross-legged in a meditative pose. With a jet-black body, he has white and red streaks adorning his body. The dominant red color symbolizes courage, spirit, and strength. The red headdress resembles feathers, adding to his majestic appearance. This sculpture is not only a beautiful display, but also a representation of Papua's rich and meaningful culture.</p>
             </div>
         </div>
-        <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
+        <div class="gallery-item">
             <div class="slider">
-                <img class="slides4 active" src="assets/k3/topengmerah.png" alt="Exhibit 4 Image 1" style="width: 200px; height: auto;">
-                <img class="slides4" src="assets/k3/topengabu.png" alt="Exhibit 4 Image 2" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides4(1)">&#10095;</a>
+                <img class="slides4 active" src="assets/k3/topengmerah.png" alt="Exhibit 4 Image 1">
+                <img class="slides4" src="assets/k3/topengabu.png" alt="Exhibit 4 Image 2">
+                <a class="prev" onclick="plusSlides(-1, 'slides4')">❮</a>
+                <a class="next" onclick="plusSlides(1, 'slides4')">❯</a>
             </div>
             <div class="gallery-desc">
                 <h3>Paper Mache Mask</h3>
-                <p>These masks are from the island of Papua, Indonesia. They hold great cultural significance and play an important role in rituals and traditional ceremonies. In these rituals and ceremonies, the masks serve as a means of communication with the gods. Many of the masks are also replicas of the gods' faces, ensuring that the deity is never forgotten.</p>
+                <p>These masks are from the island of Papua Indonesia, these types of mask's have a very important role In their culture. They can be used in rituals, and in traditional ceremonys, in their rituals and ceremonys these masks are a form of communication with the gods. Alot of the mask's are also replicas of the gods faces so that the hod is truly never forgotten</p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 5" data-description="Description of Exhibit 5">
@@ -191,50 +199,31 @@
     </footer>
 
     <script>
-        let slideIndex = 0;
-        showSlides(slideIndex);
+        let slideIndices = {
+            'slides3': 0,
+            'slides4': 0,
+            'slides5': 0
+        };
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
+        function plusSlides(n, slideClass) {
+            showSlides(slideIndices[slideClass] += n, slideClass);
         }
 
-        function showSlides(n) {
-            let slides = document.getElementsByClassName("slides3");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
+        function showSlides(n, slideClass) {
+            let slides = document.getElementsByClassName(slideClass);
+            if (n >= slides.length) { slideIndices[slideClass] = 0; }
+            if (n < 0) { slideIndices[slideClass] = slides.length - 1; }
+            
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            slides[slideIndex].style.display = "block";
+            slides[slideIndices[slideClass]].style.display = "block";
         }
 
-        function plusSlides4(n) {
-            showSlides4(slideIndex += n);
-        }
-
-        function showSlides4(n) {
-            let slides = document.getElementsByClassName("slides4");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-
-        function plusSlides5(n) {
-            showSlides5(slideIndex += n);
-        }
-
-        function showSlides5(n) {
-            let slides = document.getElementsByClassName("slides5");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
+        // Initialize all sliders
+        showSlides(0, 'slides3');
+        showSlides(0, 'slides4');
+        showSlides(0, 'slides5');
     </script>
 
 </body>

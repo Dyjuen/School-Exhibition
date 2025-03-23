@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
     <title>The Adventure of Sumatra - Exhibition</title>
-    <link rel="stylesheet" href="A.css">
+    <link rel="stylesheet" href="C.css">
     <style>
         .title-section h1 {
             font-size: 60px;
@@ -63,11 +63,19 @@
         .slider {
             position: relative;
             width: 200px;
-            height: auto;
+            height: 200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .slides3 {
             display: none;
-            width: 100%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .active {
             display: block;
@@ -75,22 +83,64 @@
         .prev, .next {
             cursor: pointer;
             position: absolute;
-            bottom: 1px;
-            width: auto;
-            padding: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            z-index: 3;
+            transition: 0.3s ease;
         }
         .prev {
-            left: 0%;
-            bottom: 100%;
+            left: -50px;
         }
         .next {
-            left: 70%;
-            bottom: 100%;
+            right: -50px;
+        }
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .gallery-desc h4 {
+            font-size: 50px;
+        }
+        .gallery-desc h5 {
+            font-size: 30px;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+        .item-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            width: 100%;
+        }
+        .product-title {
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        @media (max-width: 768px) {
+            .prev {
+                left: 10px;
+            }
+            .next {
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -133,15 +183,15 @@
             <img src="assets/c6/The Heart of Toba.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
             <div class="gallery-desc">
                 <h3>The Heart of Toba </h3>
-                <p>TA painting featuring the iconic view of Sumatra Island, namely Lake Toba and Samosir Island.</p>
+                <p>A painting featuring the iconic view of Sumatra Island, namely Lake Toba and Samosir Island.</p>
             </div>
         </div>
         <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
             <div class="slider">
                 <img class="slides3 active" src="assets/c6/Tamboro Charm (1).jpg" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
                 <img class="slides3" src="assets/c6/Tamboro Charm.jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <a class="prev" onclick="plusSlides(-1, 'slides3')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'slides3')">&#10095;</a>
             </div>
             <div class="gallery-desc">
                 <h3>Tamboro Charm </h3>
@@ -166,7 +216,7 @@
             <p>Contact Person: +62 812-6474-2579</p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+            <p>Instagram: <a href="https://instagram.com/9cintatw" target="_blank">@9cintatw</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>
@@ -174,22 +224,31 @@
     </footer>
 
     <script>
-        let slideIndex = 0;
-        showSlides(slideIndex);
+        let slideIndices = {
+            'slides3': 0,
+            'slides4': 0,
+            'slides5': 0
+        };
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
+        function plusSlides(n, slideClass) {
+            showSlides(slideIndices[slideClass] += n, slideClass);
         }
 
-        function showSlides(n) {
-            let slides = document.getElementsByClassName("slides3");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
+        function showSlides(n, slideClass) {
+            let slides = document.getElementsByClassName(slideClass);
+            if (n >= slides.length) { slideIndices[slideClass] = 0; }
+            if (n < 0) { slideIndices[slideClass] = slides.length - 1; }
+            
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            slides[slideIndex].style.display = "block";
+            slides[slideIndices[slideClass]].style.display = "block";
         }
+
+        // Initialize all sliders
+        showSlides(0, 'slides3');
+        showSlides(0, 'slides4');
+        showSlides(0, 'slides5');
     </script>
 
 </body>

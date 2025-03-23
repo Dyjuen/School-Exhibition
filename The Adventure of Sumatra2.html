@@ -2,10 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Sumatra - Exhibition</title> <!-- Updated title -->
+    <meta name="viewport" content="width=1024">
+    <title>The Adventure of Sumatra - Exhibition</title>
     <link rel="stylesheet" href="B.css">
     <style>
+        .slider {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slides3, .slides4, .slides5 {
+            display: none;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .active {
+            display: block;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            z-index: 3;
+            transition: 0.3s ease;
+        }
+        .prev {
+            left: -50px;
+        }
+        .next {
+            right: -50px;
+        }
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
         .title-section h1 {
             font-size: 60px;
             text-align: center;
@@ -60,65 +107,27 @@
             line-height: 1.6;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .content {
-            flex: 1;
-        }
 
         @media (max-width: 768px) {
-            .title-section h1 {
-                font-size: 45px;
-                margin: 25px 0;
+            .prev {
+                left: 10px;
             }
-            .gallery {
-                gap: 40px;
-                padding: 20px;
-            }
-            .gallery-item {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .title-section h1 {
-                font-size: 32px;
-                margin: 20px 0;
-            }
-            .gallery {
-                gap: 30px;
-                padding: 15px;
-            }
-            .gallery-item {
-                padding: 15px;
-            }
-            .gallery-desc {
-                padding: 20px;
-            }
-            .gallery-desc h3 {
-                font-size: 22px;
-            }
-            .gallery-desc p {
-                font-size: 16px;
-                line-height: 1.5;
+            .next {
+                right: 10px;
             }
         }
     </style>
 </head>
 <body>
-
     <!-- Top Bar -->
     <header>
         <div class="topbar">
-            <a href="B.html" class="topbar-home">9B</a> <!-- Clickable link -->
+            <a href="B.html" class="topbar-home">9B</a>
             <div class="dropdown">
                 <span class="right">E-Catalogue</span>
                 <div class="dropdown-content">
                     <a href="The Adventure of Sulawesi2.html">The Adventure of Sulawesi</a>
-                    <a href="The Adventure of Kalimantan2.html">The Adventure of Kalimantan</a>
+                    <a href="The Adventure of Kalimantan2.html">The Adventure of Banjarmasin</a>
                     <a href="The Adventure of Papua2.html">The Adventure of Papua</a>
                     <a href="The Adventure of Java2.html">The Adventure of Java</a>
                     <a href="The Adventure of Sumatra2.html">The Adventure of Sumatra</a>
@@ -130,35 +139,69 @@
 
     <!-- Title Section -->
     <div class="title-section">
-        <h1>The Adventure of Sumatra</h1> <!-- Updated title -->
+        <h1>The Adventure of Sumatra</h1>
     </div>
 
     <!-- Gallery Section -->
-    <div class="content">
-        <div class="gallery">
-            <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-                <img src="assets/b1/IMG_0260.JPG" alt="Exhibit 1" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>Interactive Book</h3>
-                    <p>An interactive book filled with steps of how to cook rendang, also filled with various illustration.</p>
-                </div>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="assets/b1/IMG_0260.JPG" alt="Exhibit 1" style="width: 200px; height: auto;">
+            <div class="gallery-desc">
+                <h3>Interactive Book</h3>
+                <p>An interactive book filled with steps of how to cook rendang, also filled with various illustration.</p>
             </div>
-            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
-                <img src="assets/b1/IMG_0371.JPG" alt="Exhibit 2" style="width: 200px; height: 200px;">
-                <div class="gallery-desc">
-                    <h3>Minangkabau's Hat</h3>
-                    <p>This Minangkabau hat is one part of the traditional clothing of Minangkabau, West Sumatra. This hat is used for women.</p>
-                </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="slider">
+                <img class="slides3 active" src="assets/b1/IMG_0371.JPG" alt="Exhibit 2" style="width: 200px; height: 200px;">
+                <img class="slides3" src="assets/b1/IMG_0372.JPG" alt="Exhibit 2" style="width: 200px; height: 200px;">
+                <a class="prev" onclick="plusSlides(-1, 'slides3')">❮</a>
+                <a class="next" onclick="plusSlides(1, 'slides3')">❯</a>
             </div>
-            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-                <img src="assets/b1/IMG_0331.JPG" alt="Exhibit 3" style="width: 200px; height: auto;">
-                <div class="gallery-desc">
-                    <h3>T-shirt with Culture Design and Language of Minangkabau, Sumatra Barat</h3>
-                    <p>The clothes that designed with a touch of traditional clothing and language from Minangkabau, West Sumatra.</p>
-                </div>
+            <div class="gallery-desc">
+                <h3>Minangkabau's Hat</h3>
+                <p>This Minangkabau hat is one part of the traditional clothing of Minangkabau, West Sumatra. This hat is used for women.</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/b1/IMG_0331.JPG" alt="Exhibit 3" style="width: 200px; height: auto;">
+            <div class="gallery-desc">
+                <h3>T-shirt with Culture Design and Language of Minangkabau, Sumatra Barat</h3>
+                <p>The clothes that designed with a touch of traditional clothing and language from Minangkabau, West Sumatra.</p>
             </div>
         </div>
     </div>
+
+    <!-- Script Section -->
+    <script>
+        let slideIndices = {
+            'slides3': 0,
+            'slides4': 0,
+            'slides5': 0
+        };
+
+        function plusSlides(n, slideClass) {
+            showSlides(slideIndices[slideClass] += n, slideClass);
+        }
+
+        function showSlides(n, slideClass) {
+            let slides = document.getElementsByClassName(slideClass);
+            if (n >= slides.length) { slideIndices[slideClass] = 0; }
+            if (n < 0) { slideIndices[slideClass] = slides.length - 1; }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndices[slideClass]].style.display = "block";
+        }
+
+        // Initialize all sliders
+        showSlides(0, 'slides3');
+        showSlides(0, 'slides4');
+        showSlides(0, 'slides5');
+    </script>
 
     <!-- Footer -->
     <footer>
@@ -169,7 +212,7 @@
             <p>Contact Person: +62 812-6474-2579</p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/basstars_/" target="_blank">@basstars_</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>

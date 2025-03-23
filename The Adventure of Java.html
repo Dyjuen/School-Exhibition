@@ -2,48 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventure of Java - Exhibition</title>
+    <meta name="viewport" content="width=1024">
+    <title>The Adventure of Aceh - Exhibition</title>
     <link rel="stylesheet" href="A.css">
     <style>
-        .slider {
-            position: relative;
-            width: 200px;
-            height: auto;
-        }
-        .slides3, .slides4, .slides5 {
-            display: none;
-            width: 100%;
-        }
-        .active {
-            display: block;
-        }
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            bottom: 1px;
-            width: auto;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
-        }
-        .prev {
-            left: 0%;
-            bottom: 100%;
-        }
-        .next {
-            left: 70%;
-            bottom: 100%;
-        }
         .title-section h1 {
             font-size: 60px;
             text-align: center;
             margin: 30px 0;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery-desc h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        .gallery-desc h4 {
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .gallery-desc h5 {
+            font-size: 25px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
         }
         .gallery {
             display: flex;
@@ -92,146 +86,104 @@
             line-height: 1.6;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
-        .gallery-desc h4 {
-            font-size: 50px; /* Increase font size for gallery item descriptions */
+        .gallery-item-media {
+            width: 300px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+            position: relative;
+            z-index: 2;
         }
-        .gallery-desc h5 {
-            font-size: 30px; /* Increase font size for gallery item descriptions */
+        .gallery-item-media:hover {
+            transform: scale(1.05);
         }
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .content {
-            flex: 1;
-        }
-        .gallery-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            width: 90%;
-            max-width: 800px;
-        }
-        .item-content {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            width: 100%;
-        }
-        .product-title {
-            font-size: 30px;
-            color: white;
-            text-align: center;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .gallery-desc {
-            flex: 1;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-            color: white;
-        }
-        .gallery-desc p {
-            font-size: 17px;
-            text-align: left;
-            margin: 0;
-            color: #f4f4f4;
-            line-height: 1.5;
+
+        @media (max-width: 768px) {
+            .title-section h1 {
+                font-size: 45px;
+                margin: 25px 0;
+            }
+            .gallery {
+                gap: 40px;
+                padding: 20px;
+            }
+            .gallery-item {
+                padding: 20px;
+            }
+            .item-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 0 15px;
+            }
+            .gallery-item-media {
+                width: 250px;
+                margin: 0 auto;
+            }
+            .gallery-desc {
+                width: 100%;
+                padding: 25px;
+                position: relative;
+                order: unset;
+            }
         }
 
         @media (max-width: 480px) {
+            .title-section h1 {
+                font-size: 32px;
+                margin: 20px 0;
+            }
             .gallery {
-                gap: 45px;
+                gap: 30px;
                 padding: 15px;
             }
             .gallery-item {
-                gap: 10px;
-                width: 95%;
+                padding: 15px;
             }
             .item-content {
-                gap: 15px;
-            }
-            .product-title {
-                font-size: 15px;
-            }
-            .gallery-desc {
-                padding: 8px;
-                max-height: 120px;
-                overflow-y: auto;
-            }
-            .gallery-desc::-webkit-scrollbar {
-                width: 3px;
-            }
-            .gallery-desc::-webkit-scrollbar-track {
-                background: rgba(0, 0, 0, 0.3);
-                border-radius: 4px;
-            }
-            .gallery-desc::-webkit-scrollbar-thumb {
-                background: rgba(255, 255, 255, 0.3);
-                border-radius: 4px;
-            }
-            .gallery-desc p {
-                font-size: 11px;
-                line-height: 1.2;
-                margin: 0;
-                padding: 0;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 10px;
             }
             .gallery-item-media {
-                width: 120px;
-                margin: 0;
+                width: 180px;
+                margin: 0 auto 15px auto;
             }
-            .slider {
-                width: 120px;
-                margin: 0;
+            .gallery-desc {
+                padding: 20px;
+                width: 100%;
+                position: relative;
+                z-index: 1;
             }
-            .slides3 {
-                width: 120px !important;
-                height: auto !important;
-                margin: 0;
-            }
-            .gallery-item img {
-                width: 120px !important;
-                height: auto !important;
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 16px;
+                line-height: 1.5;
                 margin: 0;
             }
         }
 
         @media (max-width: 480px) and (orientation: landscape) {
             .gallery {
-                gap: 35px;
-                padding: 12px;
+                gap: 20px;
             }
             .gallery-item {
                 gap: 8px;
             }
-            .item-content {
-                gap: 12px;
-            }
             .product-title {
-                font-size: 14px;
+                font-size: 18px;
             }
             .gallery-desc {
-                max-height: 100px;
-                padding: 6px;
+                max-height: 120px;
+                padding: 12px;
             }
-            .gallery-desc p {
-                font-size: 10px;
-                line-height: 1.2;
+            .gallery-desc h4, .gallery-desc h5 {
+                font-size: 14px;
             }
             .gallery-item-media {
-                width: 100px;
-            }
-            .slider {
-                width: 100px;
-            }
-            .slides3 {
-                width: 100px !important;
-            }
-            .gallery-item img {
-                width: 100px !important;
+                width: 120px;
             }
         }
     </style>
@@ -258,50 +210,97 @@
 
     <!-- Title Section -->
     <div class="title-section">
-        <h1>The Adventure of Java</h1>
+        <h1>The Adventure of Aceh</h1>
     </div>
 
     <!-- Gallery Section -->
-    <div class="gallery">
-        <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
-            <img src="assets/c4/Sangkara Java_ Ijen Terra.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Sangkara Java: Ijen Terra</h3>
-                <p>An adventure to enter deep into the tropical forest of Java, where various flora grow and have been living, like endemic plants and exotic trees. With green strokes into light and dark, there is a three-dimensional effect as if inviting the audience on a journey into the wild nature of Java. The details, like branches and shadows, can symbolize the balance of the ecosystem.</p>
+    <div class="content">
+        <div class="gallery">
+            <div class="gallery-item" data-title="Exhibit 1" data-description="Description of Exhibit 1">
+                <img src="assets/k4/crochet.jpg" alt="Exhibit 1" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>The Javanese Moon Orchid</h3>
+                    <p>The art piece was nicknamed "Javanese Moon
+                        Orchid" because it draws inspiration from the
+                        rich cultural and natural heritage of Java,
+                        Indonesia. The moon orchid is one of
+                        Indonesia's national flowers, symbolizing
+                        elegance, resilience, and the country's
+                        biodiversity, delicate flowers are knitted from
+                        fine strings, their stems formed with wire
+                        wrapped in green tape for strength and
+                        realism. The leaves, similarly crafted, are
+                        arranged in a pot, creating a harmonious blend
+                        of natural elegance and human ingenuity. Each
+                        stitch and detail reflects a fusion of
+                        tradition and modern creativity.</p>
+                </div>
             </div>
-        </div>
+            <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
+                <img src="assets/k4/Makrame.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Makrame</h3>
+                    <p>Often employed in the fabrication
+                        of wall hangings, jewelry, and
+                        functional objects, macramé is a
+                        decorative art that employs
+                        knotting techniques to form
+                        intricate designs. Historians
+                        believe its origins lie in the Middle
+                        East during the 13th Century, with
+                        subsequent diffusion to Europe
+                        facilitated by sailors and traders
+                        where it achieved fame during the
+                        Victorian Era. Today, Macramé
+                        remains a creative and meditative
+                        art form that embodies
+                        evolutionary nuances, richly blend
+                        with its deep-rooted history and
+                        continues to be practiced for
+                        spiritual and symbolic
+                        significance.</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+                <img src="assets/k4/Makrame.jpg" alt="Exhibit 3" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>The Adventure of Java</h3>
+                    <p>The Adventure of Java*The Adventure of Java* celebrates Java's
+                        The Adventine of Terve
+                        diverse tribes and their unique cultures through floating vignettes.
+                        The floating design symbolizes the interconnectedness of the island's
+                        regions, highlighting how each tribe's distinct traditions contribute
+                        to Java's rich, unified spirit. It's a dreamlike journey through the
+                        island's cultural soul celebrates Java's diverse tribes and their
+                        unique cultures through floating vignettes. The floating design
+                        symbolizes the interconnectedness of the island's regions,
+                        highlighting how each tribe's distinct traditions contribute to
+                        Java's rich, unified spirit. It's a dreamlike journey through the
+                        island's cultural soul. Painted with acrylics, the artwork shows
+                        floating scenes of Java's tribes and places, each highlighting unique
+                        traditions and landscapes. Vibrant colors and details create a
+                        dreamlike flow, capturing Java's cultural richness. </p>
+                </div>
+            </div>
+            <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
+                <img src="assets/k4/bunga.png" alt="Exhibit 3" style="width: 200px; height: auto;">
+                <div class="gallery-desc">
+                    <h3>Javanese Ember Blossom</h3>
+                    <p>The name *Javanese Ember Blossom* honors
+                        Java's cultural heritage and natural beauty.
+                        "Ember" reflects the fiery red, black, and
+                        orange hues, while "blossom" ties it to Java's
+                        love for floral motifs, like its national
+                        flower, the moon orchid. The name blends
+                        tradition with modern elegance. Knitted with
+                        red and black threads, transitioning to orange
+                        near the top, the piece features black petals
+                        with red centers at the rim. These delicate
+                        flowers surround the pot, combining
+                        traditional knitting with vibrant, playful
+                        charm. </p>
 
-        <div class="gallery-item" data-title="Exhibit 2" data-description="Description of Exhibit 2">
-            <img src="assets/c4/Sangkara Java_ Southern Sea.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>Sangkara Java: Southern Sea</h3>
-                <p>The Southern Sea, also known as the Indian Ocean, holds great significance in Javanese culture and mythology. This artwork captures the raw power and beauty of the Southern Sea, which has long been associated with Nyai Roro Kidul, the mythical Queen of the Southern Sea in Javanese folklore.</p>
-            </div>
-        </div>
-
-        <div class="gallery-item" data-title="Exhibit 3" data-description="Description of Exhibit 3">
-            <div class="slider">
-                <img class="slides3 active" src="assets/c4/Golden Ink of Wayang_ Gatotkaca's might (front).jpg" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/c4/Golden Ink of Wayang_ Gatotkaca's might (back).jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/c4/IMG_3253.jpg" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <div class="gallery-desc">
-                <h3>Golden Ink of Wayang: Gatotkaca's Might</h3>
-                <p>Gatotkaca is one of the most powerful and beloved characters in Javanese wayang (shadow puppet) tradition. Known for his extraordinary strength and ability to fly, he represents courage, loyalty, and protection. This artwork celebrates his legendary might through traditional Javanese artistic elements combined with modern design techniques.</p>
-            </div>
-        </div>
-
-        <div class="gallery-item" data-title="Exhibit 4" data-description="Description of Exhibit 4">
-            <div class="slider">
-                <img class="slides4 active" src="assets/c4/Golden Ink of Wayang_ Madri's Loyalty & The Mountain.jpg" alt="Exhibit 4 Image 1" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides4(1)">&#10095;</a>
-            </div>
-            <div class="gallery-desc">
-                <h3>Golden Ink of Wayang: Madri's Loyalty & The Mountain</h3>
-                <p>This piece depicts Madri, a character from the Mahabharata whose story exemplifies unwavering loyalty and sacrifice. The mountain backdrop represents Mount Merapi, one of Java's most sacred volcanoes, creating a powerful connection between Javanese mythology and its natural landscape.</p>
+                </div>
             </div>
         </div>
     </div>

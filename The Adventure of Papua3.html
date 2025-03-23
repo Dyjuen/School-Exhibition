@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
     <title>The Adventure of Papua - Exhibition</title>
-    <link rel="stylesheet" href="A.css">
+    <link rel="stylesheet" href="C.css">
     <style>
         .slider {
             position: relative;
             width: 200px;
-            height: auto;
+            height: 200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .slides3, .slides4, .slides5 {
             display: none;
-            width: 100%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .active {
             display: block;
@@ -21,22 +29,29 @@
         .prev, .next {
             cursor: pointer;
             position: absolute;
-            bottom: 1px;
-            width: auto;
-            padding: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            z-index: 3;
+            transition: 0.3s ease;
         }
         .prev {
-            left: 0%;
-            bottom: 100%;
+            left: -50px;
         }
         .next {
-            left: 70%;
-            bottom: 100%;
+            right: -50px;
+        }
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
         }
         .title-section h1 {
             font-size: 60px;
@@ -44,6 +59,18 @@
             margin: 30px 0;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .gallery-desc h3 {
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 3;
+        }
+        .gallery-desc h4 {
+            font-size: 20px; /* Increase font size for gallery item titles */
         }
         .gallery {
             display: flex;
@@ -75,15 +102,6 @@
             z-index: 2;
             width: 100%;
         }
-        .gallery-desc h3 {
-            font-size: 30px;
-            color: white;
-            text-align: center;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            position: relative;
-            z-index: 3;
-        }
         .gallery-desc p {
             font-size: 17px;
             text-align: left;
@@ -108,7 +126,7 @@
                     <a href="The Adventure of Papua3.html">The Adventure of Papua</a>
                     <a href="The Adventure of Java3.html">The Adventure of Java</a>
                     <a href="The Adventure of Sumatra3.html">The Adventure of Sumatra</a>
-                    <a href="The Adventure of Bali3.html">The Adventure of Bali</a>
+                    <a href="The Adventure of Bali3.html">The Adventure of NTB</a>
                 </div>
             </div>
         </div>
@@ -128,47 +146,38 @@
                 <p>The Noken is a traditional Papuan bag, handwoven from tree fibers or orchid stems. This versatile and eco-friendly bag is not just a carrying tool but also a symbol of Papuan cultural identity, recognized by UNESCO as an Intangible Cultural Heritage. Each pattern and weaving technique represents different tribal traditions and stories.</p>
             </div>
         </div>
-
-        <div class="gallery-item">
-            <img src="assets/c3/The Beauty of East_ Anggrek Hitam Papua.jpg" alt="Exhibit 2" style="width: 200px; height: auto;">
-            <div class="gallery-desc">
-                <h3>The Beauty of East: Anggrek Hitam Papua</h3>
-                <p>The Black Orchid (Coelogyne pandurata) is Papua's rare and precious flower. This unique orchid species, with its striking dark petals, represents the exotic beauty of Papua's biodiversity. It's not just a flower but a symbol of the region's natural heritage and the need for conservation.</p>
-            </div>
-        </div>
-
         <div class="gallery-item">
             <div class="slider">
-                <img class="slides3 active" src="assets/c3/The White Gold of Papua_ Papuan White Shell.jpg" alt="Exhibit 3 Image 1" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/c3/The White Gold of Papua_ Papuan White Shell 2.jpg" alt="Exhibit 3 Image 2" style="width: 200px; height: auto;">
-                <img class="slides3" src="assets/c3/The White Gold of Papua_ Papuan White Shell 3.jpg" alt="Exhibit 3 Image 3" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <img class="slides3 active" src="assets/c3/The White Gold of Papua_ Papuan White Shell.jpg" alt="Exhibit 3 Image 1">
+                <img class="slides3" src="assets/c3/The White Gold of Papua_ Papuan White Shell 2.jpg" alt="Exhibit 3 Image 2">
+                <img class="slides3" src="assets/c3/The White Gold of Papua_ Papuan White Shell 3.jpg" alt="Exhibit 3 Image 3">
+                <a class="prev" onclick="plusSlides(-1, 'slides3')">❮</a>
+                <a class="next" onclick="plusSlides(1, 'slides3')">❯</a>
             </div>
             <div class="gallery-desc">
                 <h3>The White Gold of Papua: Papuan White Shell</h3>
                 <p>The white shell, known locally as 'Kina', holds immense cultural and economic value in Papua. These shells were traditionally used as currency and ceremonial objects. Today, they remain important in cultural ceremonies and as symbols of wealth and status in Papuan society.</p>
             </div>
         </div>
-
         <div class="gallery-item">
             <div class="slider">
-                <img class="slides4 active" src="assets/c3/The Wonderful of Papua_ Raja Ampat.jpg" alt="Exhibit 4 Image 1" style="width: 200px; height: auto;">
-                <img class="slides4" src="assets/c3/The Wonderful of Papua_ Raja Ampat 2.jpg" alt="Exhibit 4 Image 2" style="width: 200px; height: auto;">
-                <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides4(1)">&#10095;</a>
+                <img class="slides4 active" src="assets/c3/The Wonderful of Papua_ Raja Ampat.jpg" alt="Exhibit 4 Image 1">
+                <img class="slides4" src="assets/c3/The Wonderful of Papua_ Raja Ampat 2.jpg" alt="Exhibit 4 Image 2">
+                <a class="prev" onclick="plusSlides(-1, 'slides4')">❮</a>
+                <a class="next" onclick="plusSlides(1, 'slides4')">❯</a>
             </div>
             <div class="gallery-desc">
                 <h3>The Wonderful of Papua: Raja Ampat</h3>
                 <p>Raja Ampat, meaning 'Four Kings', is a stunning archipelago comprising over 1,500 small islands. Known for having the richest marine biodiversity on Earth, this paradise showcases Papua's natural wonder with its crystal-clear waters, vibrant coral reefs, and unique island formations.</p>
             </div>
         </div>
-
-        <div class="gallery-item">
-            <img src="assets/c3/The House of Mother Nature_ Honai.jpg" alt="Exhibit 5" style="width: 200px; height: auto;">
+        <div class="gallery-item" data-title="Exhibit 5" data-description="Description of Exhibit 5">
+            <div class="slider">
+                <img class="slides5 active" src="assets/c3/The Hope From Papua_ Papuan Dream Catcher.jpg" alt="Exhibit 5 Image 1" style="width: 200px; height: auto;">
+            </div>
             <div class="gallery-desc">
-                <h3>The House of Mother Nature: Honai</h3>
-                <p>The Honai is a traditional Papuan house, primarily found in the highlands. Its unique circular design and thatched roof are perfectly adapted to the mountain climate. More than just a dwelling, the Honai represents Papuan architectural wisdom and serves as a center for community gatherings and cultural activities.</p>
+                <h3>The Hope From Papua: Papuan Dream Catcher</h3>
+                <p>A typical Papuan dreamcatcher is made from rattan or bamboo with a woven sago or pandan fiber net. Decorated with Cenderawasih bird feathers, shell beads, and Asmat or Dani tribal motif carvings, this dreamcatcher symbolizes protection, good luck, and a spiritual connection with nature and ancestors. In addition to functioning as a filter for bad dreams, its beauty also makes it a valuable work of art.</p>
             </div>
         </div>
     </div>
@@ -182,7 +191,7 @@
             <p>Contact Person: +62 812-6474-2579</p>
         </div>
         <div class="footer-column">
-            <p>Instagram: <a href="https://instagram.com/angkasa.mydjhs" target="_blank">@angkasa.mydjhs</a></p>
+            <p>Instagram: <a href="https://instagram.com/9cintatw" target="_blank">@angkasa.mydjhs</a></p>
         </div>
         <div class="footer-column">
             <p>Address: Cempaka Street No.4, Depok, Pancoran Mas District, Depok City, West Java 16431</p>
@@ -190,50 +199,31 @@
     </footer>
 
     <script>
-        let slideIndex = 0;
-        showSlides(slideIndex);
+        let slideIndices = {
+            'slides3': 0,
+            'slides4': 0,
+            'slides5': 0
+        };
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
+        function plusSlides(n, slideClass) {
+            showSlides(slideIndices[slideClass] += n, slideClass);
         }
 
-        function showSlides(n) {
-            let slides = document.getElementsByClassName("slides3");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
+        function showSlides(n, slideClass) {
+            let slides = document.getElementsByClassName(slideClass);
+            if (n >= slides.length) { slideIndices[slideClass] = 0; }
+            if (n < 0) { slideIndices[slideClass] = slides.length - 1; }
+            
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            slides[slideIndex].style.display = "block";
+            slides[slideIndices[slideClass]].style.display = "block";
         }
 
-        function plusSlides4(n) {
-            showSlides4(slideIndex += n);
-        }
-
-        function showSlides4(n) {
-            let slides = document.getElementsByClassName("slides4");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-
-        function plusSlides5(n) {
-            showSlides5(slideIndex += n);
-        }
-
-        function showSlides5(n) {
-            let slides = document.getElementsByClassName("slides5");
-            if (n >= slides.length) { slideIndex = 0 }
-            if (n < 0) { slideIndex = slides.length - 1 }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
+        // Initialize all sliders
+        showSlides(0, 'slides3');
+        showSlides(0, 'slides4');
+        showSlides(0, 'slides5');
     </script>
 
 </body>
